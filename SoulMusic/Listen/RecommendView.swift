@@ -1,0 +1,37 @@
+//
+//  RecommendView.swift
+//  SoulMusic
+//
+//  Created by ZZZS on 15.8.22.
+//
+
+import SwiftUI
+
+struct RecommendView: View {
+    @EnvironmentObject var piccarddatas : Model
+    var body: some View {
+        ScrollView{
+            FunctionView()
+            HStack{
+                Text("动态推荐")
+                    .font(.system(size: 17))
+                    .foregroundColor(Color("OnSurface"))
+                Spacer()
+            }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 5)
+            VStack{
+                ForEach(piccarddatas.PicCarddatas) { item in
+                    PicCard(heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum)
+                }
+            }
+        }
+    }
+}
+
+struct RecommendView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecommendView()
+            .environmentObject(Model())
+    }
+}
