@@ -10,7 +10,7 @@ import SwiftUI
 struct TravelView: View {
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
-        ScrollView{
+        ScrollView(.vertical){
             VStack{
                 HStack{
                     Text("最新动态")

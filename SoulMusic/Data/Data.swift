@@ -25,7 +25,15 @@ struct PicCarddata : Identifiable{
     var heartnum: Int
     var heart: Bool
 }
+enum Selection{
+    case listen
+    case musiclibrary
+    case arcommunity
+    case message
+    case profile
+}
 class Model : ObservableObject{
+    @Published var select: Selection = .listen
     var Tabdatas : [Tabdata] = [
     Tabdata(id: 0, tabtext: "推荐"),
     Tabdata(id: 1, tabtext: "关注"),

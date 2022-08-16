@@ -8,38 +8,31 @@
 import SwiftUI
 
 struct TabbarView: View {
-    enum Selection{
-        case listen
-        case musiclibrary
-        case arcommunity
-        case message
-        case profile
-    }
-    @State var select: Selection = .listen
+    @EnvironmentObject var model: Model
     var body: some View {
         HStack{
             HStack{
                 Spacer()
                 VStack(spacing: 0){
-                    Image(select == .listen ? "icon_listentoworld_24_sel":  "icon_listentoworld_24_nsel")
+                    Image(model.select == .listen ? "icon_listentoworld_24_sel":  "icon_listentoworld_24_nsel")
                     Text("听世界")
                         .font(.system(size: 10))
-                        .foregroundColor(select == .listen ? Color("Primary"): Color("Outline"))
+                        .foregroundColor(model.select == .listen ? Color("Primary"): Color("Outline"))
                 }
                 .frame(width: 60)
                 .onTapGesture {
-                    select = .listen
+                    model.select = .listen
                 }
                 Spacer()
                 VStack(spacing: 0){
-                    Image(select == .musiclibrary ? "icon_musiclibrary_24_sel": "icon_musiclibrary_24_nsel")
+                    Image(model.select == .musiclibrary ? "icon_musiclibrary_24_sel": "icon_musiclibrary_24_nsel")
                     Text("音乐库")
                         .font(.system(size: 10))
-                        .foregroundColor(select == .musiclibrary ? Color("Primary"): Color("Outline"))
+                        .foregroundColor(model.select == .musiclibrary ? Color("Primary"): Color("Outline"))
                 }
                 .frame(width: 60)
                 .onTapGesture {
-                    select = .musiclibrary
+                    model.select = .musiclibrary
                 }
                 Spacer()
             }
@@ -57,25 +50,25 @@ struct TabbarView: View {
             HStack{
                 Spacer()
                 VStack(spacing: 0){
-                    Image(select == .message ? "icon_message_24_sel": "icon_message_24_nsel")
+                    Image(model.select == .message ? "icon_message_24_sel": "icon_message_24_nsel")
                     Text("消息")
                         .font(.system(size: 10))
-                        .foregroundColor(select == .message ? Color("Primary"): Color("Outline"))
+                        .foregroundColor(model.select == .message ? Color("Primary"): Color("Outline"))
                 }
                 .frame(width: 60)
                 .onTapGesture {
-                    select = .message
+                    model.select = .message
                 }
                 Spacer()
                 VStack(spacing: 0){
-                    Image(select == .profile ? "icon_profile_24_sel": "icon_profile_24_nsel")
+                    Image(model.select == .profile ? "icon_profile_24_sel": "icon_profile_24_nsel")
                     Text("我的")
                         .font(.system(size: 10))
-                        .foregroundColor(select == .profile ? Color("Primary"): Color("Outline"))
+                        .foregroundColor(model.select == .profile ? Color("Primary"): Color("Outline"))
                 }
                 .frame(width: 60)
                 .onTapGesture {
-                    select = .profile
+                    model.select = .profile
                 }
                 Spacer()
             }
@@ -88,5 +81,6 @@ struct TabbarView: View {
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
         TabbarView()
+            .environmentObject(Model())
     }
 }

@@ -18,7 +18,7 @@ struct WelcomeView: View {
                 .frame(width: UIScreen.main.bounds.width / 3)
                 .offset(y: -UIScreen.main.bounds.height / 4)
             if showHome{
-                    ContentView()
+                    MainView()
             }
         }.onAppear(perform: {
             DispatchQueue.main.asyncAfter(deadline: .now()+2) {

@@ -10,7 +10,7 @@ import SwiftUI
 struct RecommendView: View {
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
-        ScrollView{
+        ScrollView(.vertical){
             FunctionView()
             HStack{
                 Text("动态推荐")

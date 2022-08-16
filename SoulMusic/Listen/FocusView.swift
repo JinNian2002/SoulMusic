@@ -10,7 +10,7 @@ import SwiftUI
 struct FocusView: View {
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
-        ScrollView{
+        ScrollView(.vertical){
             VStack{
                 HStack{
                     Text("我的关注")

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5756136128AAC346002F6F1C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136028AAC346002F6F1C /* ProfileView.swift */; };
+		5756136328AB8241002F6F1C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136228AB8241002F6F1C /* MainView.swift */; };
+		5756136528AB9359002F6F1C /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136428AB9359002F6F1C /* SongList.swift */; };
+		5756136728AB97AE002F6F1C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136628AB97AE002F6F1C /* SettingView.swift */; };
+		5756136928AB9A63002F6F1C /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136828AB9A63002F6F1C /* NavView.swift */; };
 		577B35B828AA04B3007DDC91 /* SoulMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B35B728AA04B3007DDC91 /* SoulMusicApp.swift */; };
 		577B35BA28AA04B3007DDC91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B35B928AA04B3007DDC91 /* ContentView.swift */; };
 		577B35BC28AA04B5007DDC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577B35BB28AA04B5007DDC91 /* Assets.xcassets */; };
@@ -50,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5756136028AAC346002F6F1C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5756136228AB8241002F6F1C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5756136428AB9359002F6F1C /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
+		5756136628AB97AE002F6F1C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		5756136828AB9A63002F6F1C /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		577B35B428AA04B3007DDC91 /* SoulMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577B35B728AA04B3007DDC91 /* SoulMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulMusicApp.swift; sourceTree = "<group>"; };
 		577B35B928AA04B3007DDC91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,6 +183,7 @@
 			children = (
 				577B361028AA9E4E007DDC91 /* WelcomeView.swift */,
 				577B35B928AA04B3007DDC91 /* ContentView.swift */,
+				5756136228AB8241002F6F1C /* MainView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -213,6 +224,8 @@
 		577B35EB28AA0D44007DDC91 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5756136028AAC346002F6F1C /* ProfileView.swift */,
+				5756136628AB97AE002F6F1C /* SettingView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -221,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				577B35EE28AA0DEE007DDC91 /* TabbarView.swift */,
+				5756136828AB9A63002F6F1C /* NavView.swift */,
+				5756136428AB9359002F6F1C /* SongList.swift */,
 				577B360028AA7EF5007DDC91 /* PicCard.swift */,
 				577B360228AA7FEF007DDC91 /* CardName.swift */,
 				577B360828AA921C007DDC91 /* TextCard.swift */,
@@ -378,15 +393,20 @@
 				577B35FB28AA6D6C007DDC91 /* FunctionView.swift in Sources */,
 				577B35FF28AA70A4007DDC91 /* Extension.swift in Sources */,
 				577B360D28AA9C80007DDC91 /* TravelView.swift in Sources */,
+				5756136528AB9359002F6F1C /* SongList.swift in Sources */,
 				577B35EF28AA0DEE007DDC91 /* TabbarView.swift in Sources */,
 				577B35F128AA38A3007DDC91 /* SearchView.swift in Sources */,
 				577B360528AA8009007DDC91 /* CardBar.swift in Sources */,
+				5756136928AB9A63002F6F1C /* NavView.swift in Sources */,
 				577B360328AA7FEF007DDC91 /* CardName.swift in Sources */,
+				5756136328AB8241002F6F1C /* MainView.swift in Sources */,
 				577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */,
 				577B360128AA7EF5007DDC91 /* PicCard.swift in Sources */,
 				577B35F928AA5112007DDC91 /* TabtitleView.swift in Sources */,
+				5756136128AAC346002F6F1C /* ProfileView.swift in Sources */,
 				577B35B828AA04B3007DDC91 /* SoulMusicApp.swift in Sources */,
 				577B360728AA9089007DDC91 /* RecommendView.swift in Sources */,
+				5756136728AB97AE002F6F1C /* SettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
