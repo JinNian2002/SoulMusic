@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @Binding var placeholdertext: String
-    @State var ontap = false
+    @Binding var ontap : Bool
     var body: some View {
         HStack{
             HStack{
@@ -29,7 +29,7 @@ struct SearchView: View {
             .mask(Circle())
             .rotationEffect(Angle.degrees(ontap ? 45: 0))
             .onTapGesture {
-                withAnimation(.spring(dampingFraction: 0.6, blendDuration: 0.1)){
+                withAnimation(.spring(dampingFraction: 0.8, blendDuration: 0.1)){
                     ontap.toggle()
                 }
             }

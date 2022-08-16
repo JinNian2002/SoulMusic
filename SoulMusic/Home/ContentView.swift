@@ -17,38 +17,68 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     @State var placeholdertext = ""
     @State var isselect = 0
+    @State var ontap = false
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
         NavigationView{
-            VStack{
+            ZStack{
                 VStack{
-                    //搜索栏
-                    SearchView(placeholdertext: $placeholdertext)
-                    //TabView
-                    TabtitleView(isselect: $isselect)
+                    VStack{
+                        //搜索栏
+                        SearchView(placeholdertext: $placeholdertext, ontap: $ontap)
+                        //TabView
+                        TabtitleView(isselect: $isselect)
+                    }
+                    .background(.white)
+                    .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
+                    TabView(selection: $isselect){
+                        //Recommend
+                        RecommendView(piccarddatas: _piccarddatas)
+                            .tag(0)
+                        //Focus
+                        FocusView(piccarddatas: _piccarddatas)
+                            .tag(1)
+                        //Travel
+                        TravelView(piccarddatas: _piccarddatas)
+                        .tag(2)
+                        //Comic
+                        TravelView(piccarddatas: _piccarddatas)
+                        .tag(3)
+                    }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    //Tabbar
+                    TabbarView()
                 }
-                .background(.white)
-                .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
-                TabView(selection: $isselect){
-                    //Recommend
-                    RecommendView(piccarddatas: _piccarddatas)
-                        .tag(0)
-                    //Focus
-                    FocusView(piccarddatas: _piccarddatas)
-                        .tag(1)
-                    //Travel
-                    TravelView(piccarddatas: _piccarddatas)
-                    .tag(2)
-                    //Comic
-                    TravelView(piccarddatas: _piccarddatas)
-                    .tag(3)
+                .background(Color("Background"))
+                //Menu遮罩
+                if ontap{
+                    Color.black.opacity(0.25)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            withAnimation {
+                                ontap = false
+                            }
+                        }
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                //Tabbar
-                TabbarView()
+                //Menu
+                VStack{
+                    HStack{
+                        MenuView(ontap: $ontap)
+                        MenuView(ontap: $ontap)
+                    }
+                    .hidden()
+                    HStack{
+                        MenuView(ontap: $ontap)
+                        MenuView(ontap: $ontap)
+                            .hidden()
+                    }
+                }
+                .opacity(ontap ? 1:0)
+                .scaleEffect(ontap ? 1:0)
+                .offset(x: UIScreen.main.bounds.width * 0.5 - 12, y: -UIScreen.main.bounds.height * 0.41)
+                
             }
-            .background(Color("Background"))
             .navigationBarHidden(true)
         }
     }

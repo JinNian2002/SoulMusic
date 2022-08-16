@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5745159028ABE07B00CA0DDA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745158F28ABE07B00CA0DDA /* MenuView.swift */; };
 		5756136128AAC346002F6F1C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136028AAC346002F6F1C /* ProfileView.swift */; };
 		5756136328AB8241002F6F1C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136228AB8241002F6F1C /* MainView.swift */; };
 		5756136528AB9359002F6F1C /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136428AB9359002F6F1C /* SongList.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5745158F28ABE07B00CA0DDA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5756136028AAC346002F6F1C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5756136228AB8241002F6F1C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5756136428AB9359002F6F1C /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				577B35F828AA5112007DDC91 /* TabtitleView.swift */,
 				577B35FA28AA6D6C007DDC91 /* FunctionView.swift */,
 				577B360C28AA9C80007DDC91 /* TravelView.swift */,
+				5745158F28ABE07B00CA0DDA /* MenuView.swift */,
 				577B360628AA9089007DDC91 /* RecommendView.swift */,
 				577B360A28AA9A76007DDC91 /* FocusView.swift */,
 			);
@@ -385,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				577B360928AA921C007DDC91 /* TextCard.swift in Sources */,
+				5745159028ABE07B00CA0DDA /* MenuView.swift in Sources */,
 				577B35F328AA432C007DDC91 /* Data.swift in Sources */,
 				577B35C128AA04B5007DDC91 /* Persistence.swift in Sources */,
 				577B35BA28AA04B3007DDC91 /* ContentView.swift in Sources */,
