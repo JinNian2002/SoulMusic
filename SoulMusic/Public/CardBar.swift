@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CardBar: View {
+    @Environment(\.colorScheme) var currentMode
     @EnvironmentObject var piccarddatas : Model
     @State var heart = false
     var sharenum = 0
@@ -16,19 +17,19 @@ struct CardBar: View {
     var body: some View {
         HStack{
             HStack(spacing: 6){
-                Image("share_20")
+                Image(currentMode == .dark ? "share_20_dm" : "share_20")
                 Text("\(sharenum)")
                     .font(.system(size: 12))
             }
             Spacer()
             HStack(spacing: 6){
-                Image("message_20")
+                Image(currentMode == .dark ? "message_20_dm" :"message_20")
                 Text("\(messagenum)")
                     .font(.system(size: 12))
             }
             Spacer()
             HStack(spacing: 6){
-                Image(heart ? "heart_20_sel": "heart_20_nsel")
+                Image(heart ? "heart_20_sel": currentMode == .dark ? "heart_20_nsel_dm" :"heart_20_nsel")
                 Text("\(heartnum)")
                     .font(.system(size: 12))
             }

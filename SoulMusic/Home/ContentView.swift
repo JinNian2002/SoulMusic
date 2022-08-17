@@ -30,7 +30,7 @@ struct ContentView: View {
                         //TabView
                         TabtitleView(isselect: $isselect)
                     }
-                    .background(.white)
+                    .background(Color("Surface"))
                     .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
                     
                     TabView(selection: $isselect){

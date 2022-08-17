@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FocusView: View {
+    @Environment(\.colorScheme) var currentMode
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
         ScrollView(.vertical){
@@ -43,7 +44,7 @@ struct FocusView: View {
                         .foregroundColor(Color("OnSurface"))
                     Spacer()
                     HStack(spacing: 5){
-                        Image("filter_16")
+                        Image(currentMode == .dark ? "filter_16_dm": "filter_16")
                         Text("排序")
                             .font(.system(size: 12))
                     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SongList: View {
+    @Environment(\.colorScheme) var currentMode
     var body: some View {
         HStack{
             HStack{
@@ -26,7 +27,7 @@ struct SongList: View {
                 }
             }
             Spacer()
-            Image("more")
+            Image(currentMode == .dark ? "more_dm" : "more")
                 .padding(12)
         }
     }

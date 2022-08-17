@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TravelView: View {
     @EnvironmentObject var piccarddatas : Model
+    @Environment(\.colorScheme) var currentMode
     var body: some View {
         ScrollView(.vertical){
             VStack{
@@ -18,7 +19,7 @@ struct TravelView: View {
                         .foregroundColor(Color("OnSurface"))
                     Spacer()
                     HStack(spacing: 5){
-                        Image("filter_16")
+                        Image(currentMode == .dark ? "filter_16_dm": "filter_16")
                         Text("排序")
                             .font(.system(size: 12, weight: .thin))
                     }

@@ -44,6 +44,6 @@ struct PicCard: View {
         }
         .padding(.horizontal, 24)
         .padding(.vertical, 12)
-        .background(.white)
+        .background(Color("Surface"))
     }
 }

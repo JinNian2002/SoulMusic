@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct NavView: View {
+    @Environment(\.colorScheme) var currentMode
     @Environment(\.dismiss) var dismiss
     var isshowfront = false
     var Navtitle = ""
     var body: some View {
         HStack{
-            Image("chevron_24_back")
+            Image(currentMode == .dark ? "chevron_24_back_dm" : "chevron_24_back")
                 .padding(12)
                 .onTapGesture {
                     dismiss()
@@ -22,7 +23,7 @@ struct NavView: View {
             Text(Navtitle)
                 .font(.system(size: 17, weight: .medium))
             Spacer()
-            Image("chevron_24_front")
+            Image(currentMode == .dark ? "chevron_24_front_dm" :"chevron_24_front")
                 .padding(12)
                 .opacity(isshowfront ? 1: 0)
         }

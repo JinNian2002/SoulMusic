@@ -11,7 +11,7 @@ struct WelcomeView: View {
     @State var showHome = false
     var body: some View {
         ZStack{
-            Color.white.edgesIgnoringSafeArea(.all)
+            Color("Surface").edgesIgnoringSafeArea(.all)
             Image("Logo_text")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

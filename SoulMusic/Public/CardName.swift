@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CardName: View {
+    @Environment(\.colorScheme) var currentMode
     var username = ""
     var time = ""
     var image = ""
@@ -24,7 +25,7 @@ struct CardName: View {
                     .foregroundColor(Color("FontSecondary"))
             }
             Spacer()
-            Image("more")
+            Image(currentMode == .dark ? "more_dm" : "more")
         }
     }
 }

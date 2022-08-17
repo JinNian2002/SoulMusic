@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(\.colorScheme) var currentMode
     var body: some View {
         NavigationView{
             VStack{
                 HStack(spacing: 0){
                     Spacer()
-                    Image("moon_48")
                         NavigationLink{
                             SettingView()
                                 .navigationBarHidden(true)
                         }label: {
-                            Image("gearshape_48")
+                            Image(currentMode == .dark ? "gearshape_48_dm": "gearshape_48")
                         }
                 }
                 HStack{
@@ -27,7 +27,7 @@ struct ProfileView: View {
                             .circleImage(width: 72, height: 72)
                         VStack(alignment: .leading, spacing: 10){
                             Text("瑾年")
-                                .font(.system(size: 18, weight: .medium))
+                                .font(.system(size: 18, weight: .black))
                                 .foregroundColor(Color("OnSurface"))
                             HStack(spacing: 7){
                                 HStack(spacing: 6){
@@ -60,36 +60,39 @@ struct ProfileView: View {
                     Spacer()
                     HStack(spacing: 0){
                         Text("个人空间")
-                            .font(.system(size: 14, weight: .thin))
+                            .font(.system(size: 14))
                             .foregroundColor(Color("OnSurface"))
-                        Image("chevron_16")
+                        Image(currentMode == .dark ? "chevron_24_front_dm": "chevron_24_front")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 16)
                     }
                 }
                 .padding(12)
                 HStack{
                     VStack(spacing: 10){
-                        Image("star_30")
+                        Image(currentMode == .dark ? "star_30_dm": "star_30")
                         Text("收藏")
                             .font(.system(size: 12))
                     }
                     .padding(12)
                     Spacer()
                     VStack(spacing: 10){
-                        Image("download_30")
+                        Image(currentMode == .dark ? "download_30_dm": "download_30")
                         Text("本地")
                             .font(.system(size: 12))
                     }
                     .padding(12)
                     Spacer()
                     VStack(spacing: 10){
-                        Image("inbox_30")
+                        Image(currentMode == .dark ? "inbox_30_dm": "inbox_30")
                         Text("草稿箱")
                             .font(.system(size: 12))
                     }
                     .padding(12)
                     Spacer()
                     VStack(spacing: 10){
-                        Image("clock_30")
+                        Image(currentMode == .dark ? "clock_30_dm": "clock_30")
                         Text("历史记录")
                             .font(.system(size: 12))
                     }
@@ -98,7 +101,7 @@ struct ProfileView: View {
                 .padding(.horizontal, 24)
                 HStack{
                     Text("我的作品")
-                        .font(.system(size: 17))
+                        .font(.system(size: 17, weight: .medium))
                         .foregroundColor(Color("OnSurface"))
                     Spacer()
                 }
