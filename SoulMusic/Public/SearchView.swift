@@ -29,7 +29,7 @@ struct SearchView: View {
             .mask(Circle())
             .rotationEffect(Angle.degrees(ontap ? 45: 0))
             .onTapGesture {
-                withAnimation(.spring(dampingFraction: 0.8, blendDuration: 0.1)){
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.8, blendDuration: 0.1)){
                     ontap.toggle()
                 }
             }

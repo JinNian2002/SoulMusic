@@ -14,7 +14,7 @@ struct RecommendView: View {
             FunctionView()
             HStack{
                 Text("动态推荐")
-                    .font(.system(size: 17))
+                    .font(.system(size: 17, weight: .medium))
                     .foregroundColor(Color("OnSurface"))
                 Spacer()
             }
@@ -22,7 +22,7 @@ struct RecommendView: View {
             .padding(.vertical, 5)
             VStack{
                 ForEach(piccarddatas.PicCarddatas) { item in
-                    PicCard(heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum)
+                    PicCard(heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
                 }
             }
         }

@@ -14,7 +14,7 @@ struct TravelView: View {
             VStack{
                 HStack{
                     Text("最新动态")
-                        .font(.system(size: 17))
+                        .font(.system(size: 17, weight: .medium))
                         .foregroundColor(Color("OnSurface"))
                     Spacer()
                     HStack(spacing: 5){
@@ -27,7 +27,7 @@ struct TravelView: View {
                 .padding(.vertical, 12)
                 VStack{
                     ForEach(piccarddatas.PicCarddatas) { item in
-                        PicCard(heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum)
+                        PicCard(heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
                     }
                 }
             }

@@ -37,5 +37,6 @@ struct CardBar: View {
                 
             }
         }
+        .padding(.vertical, 4)
     }
 }

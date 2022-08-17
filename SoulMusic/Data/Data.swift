@@ -12,7 +12,7 @@ struct Tabdata : Identifiable{
     var id: Int
     var tabtext: String
 }
-
+//PicCarddata后续适用于所有类型卡片，由type控制。
 struct PicCarddata : Identifiable{
     var id: Int
     var image: String
@@ -24,6 +24,7 @@ struct PicCarddata : Identifiable{
     var messagenum: Int
     var heartnum: Int
     var heart: Bool
+    var type: String
 }
 enum Selection{
     case listen
@@ -44,10 +45,10 @@ class Model : ObservableObject{
     Tabdata(id: 6, tabtext: "游戏")
     ]
     var PicCarddatas : [PicCarddata] = [
-    PicCarddata(id: 0, image: "profilepic1", username: "痴若", time: "18:06", text: "最近找到的比较好看的一张图片，就放下面了。", pic: "store", sharenum: 13, messagenum: 235, heartnum: 525, heart: false),
-    PicCarddata(id: 1, image: "profilepic2", username: "人生一场梦", time: "8:06", text: "【图片集锦】家养小动物的美照", pic: "store", sharenum: 18, messagenum: 25, heartnum: 259, heart: false),
-    PicCarddata(id: 2, image: "profilepic3", username: "孙笑川", time: "12:26", text: "我从你们那没事了。", pic: "store", sharenum: 133, messagenum: 26, heartnum: 245, heart: false),
-    PicCarddata(id: 3, image: "profilepic4", username: "清风", time: "11:06", text: "故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。", pic: "store", sharenum: 93, messagenum: 95, heartnum: 251, heart: false),
-    PicCarddata(id: 4, image: "profilepic5", username: "瑾年", time: "15:34", text: "君不见，黄河之水天上来，奔流到海不复回。                君不见，高堂明镜悲白发，朝如青丝暮成雪。", pic: "store", sharenum: 113, messagenum: 125, heartnum: 355, heart: false),
+    PicCarddata(id: 0, image: "profilepic1", username: "痴若", time: "今天 18:06", text: "最近找到的比较好看的一张图片，就放下面了。", pic: "store", sharenum: 13, messagenum: 235, heartnum: 525, heart: false, type: "pic"),
+    PicCarddata(id: 1, image: "profilepic2", username: "人生一场梦", time: "昨天 8:06", text: "【图片集锦】家养小动物的美照", pic: "store", sharenum: 18, messagenum: 25, heartnum: 259, heart: false, type: "pic"),
+    PicCarddata(id: 2, image: "profilepic3", username: "孙笑川", time: "8月6日 12:26", text: "我从你们那没事了。", pic: "", sharenum: 133, messagenum: 26, heartnum: 245, heart: false, type: "text"),
+    PicCarddata(id: 3, image: "profilepic4", username: "清风", time: "7月13日 11:06", text: "故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。", pic: "", sharenum: 93, messagenum: 95, heartnum: 251, heart: false, type: "text"),
+    PicCarddata(id: 4, image: "profilepic5", username: "瑾年", time: "7月10日 15:34", text: "君不见，黄河之水天上来，奔流到海不复回。\n君不见，高堂明镜悲白发，朝如青丝暮成雪。", pic: "store", sharenum: 113, messagenum: 125, heartnum: 355, heart: false, type: "text"),
     ]
 }

@@ -15,12 +15,12 @@ struct CardName: View {
         HStack{
             Image(image)
                 .circleImage(width: 40, height: 40)
-            VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 4){
                 Text(username)
                     .font(.system(size: 14))
                     .foregroundColor(Color("OnSurface"))
-                Text("\(time)发表了该动态")
-                    .font(.system(size: 12, weight: .thin))
+                Text("\(time)")
+                    .font(.system(size: 12))
                     .foregroundColor(Color("FontSecondary"))
             }
             Spacer()

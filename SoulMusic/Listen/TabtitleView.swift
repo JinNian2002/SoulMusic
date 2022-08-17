@@ -11,18 +11,18 @@ struct TabtitleView: View {
     @Namespace var namespace
     @Binding var isselect : Int
     @EnvironmentObject var tabdatas : Model
-    var tagwidth : CGFloat = 58
+    var tagwidth : CGFloat = 66
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
-            HStack(spacing: 8){
+            HStack(spacing: 0){
                 ForEach(tabdatas.Tabdatas) { item in
-                    VStack(spacing: 4){
+                    
                         Text(item.tabtext)
-                            .font(isselect == item.id ? .system(size: 17, weight: .medium):  .system(size: 17, weight: .regular))
-                            .padding(.vertical, 8)
+                            .font(isselect == item.id ? .system(size: 17, weight: .black):  .system(size: 17, weight: .regular))
+                            .padding(.vertical, 12)
                             .frame(width: tagwidth)
                             .foregroundColor(Color("OnSurface"))
-                    }
+                    
                     .onTapGesture {
                         withAnimation(.spring(response: 0.5, dampingFraction: 0.7)){
                             isselect = item.id
@@ -43,7 +43,7 @@ struct TabtitleView: View {
                     Spacer()
                 }
                 .padding(.horizontal, 12)
-                .offset(x: CGFloat(isselect) * (tagwidth + 8))
+                .offset(x: CGFloat(isselect) * (tagwidth))
             )
         }
     }

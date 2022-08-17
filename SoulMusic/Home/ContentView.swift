@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                VStack{
+                VStack(spacing: 0){
                     VStack{
                         //搜索栏
                         SearchView(placeholdertext: $placeholdertext, ontap: $ontap)
@@ -32,6 +32,7 @@ struct ContentView: View {
                     }
                     .background(.white)
                     .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
+                    
                     TabView(selection: $isselect){
                         //Recommend
                         RecommendView(piccarddatas: _piccarddatas)
@@ -51,6 +52,7 @@ struct ContentView: View {
                     TabbarView()
                 }
                 .background(Color("Background"))
+                
                 //Menu遮罩
                 if ontap{
                     Color.black.opacity(0.25)

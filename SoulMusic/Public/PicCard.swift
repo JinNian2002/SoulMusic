@@ -17,21 +17,28 @@ struct PicCard: View {
     var sharenum = 0
     var messagenum = 0
     var heartnum = 0
+    var item : PicCarddata
     var body: some View {
-        VStack(alignment: .leading, spacing: 7){
+        VStack(alignment: .leading, spacing: 18){
             CardName(username: username, time: time, image: image)
-            
+            if item.type == "pic" {
                 Text(text)
-                    .font(.system(size: 16, weight: .thin))
+                    .font(.system(size: 16))
                     .foregroundColor(Color("OnSurface"))
             
                 
-            Image(pic)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: UIScreen.main.bounds.height / 4)
-                .clipped()
-                .cornerRadius(6)
+                Image(pic)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: UIScreen.main.bounds.height / 4)
+                    .clipped()
+                    .cornerRadius(6)
+            }else if item.type == "text"{
+                Text(text)
+                    .font(.system(size: 16))
+                    .foregroundColor(Color("OnSurface"))
+            }
+                
             CardBar(heart: heart, sharenum: sharenum, messagenum: messagenum, heartnum: heartnum)
             
         }
