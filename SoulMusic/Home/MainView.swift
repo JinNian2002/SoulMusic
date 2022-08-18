@@ -14,11 +14,24 @@ struct MainView: View {
         case .listen:
             ContentView()
         case .musiclibrary:
-            Text("1")
+            VStack{
+                Text("1")
+                Spacer()
+                TabbarView()
+            }
+            
         case .arcommunity:
-            Text("1")
+            VStack{
+                Text("1")
+                Spacer()
+                TabbarView()
+            }
         case .message:
-            Text("1")
+            VStack{
+                Text("1")
+                Spacer()
+                TabbarView()
+            }
         case .profile:
             ProfileView()
         }

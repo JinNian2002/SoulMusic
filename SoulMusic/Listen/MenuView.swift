@@ -16,18 +16,30 @@ struct MenuView: View {
                 .font(.system(size: 14))
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
+                .onTapGesture {
+                    ontap = false
+                }
             Label("发布音乐", image: currentMode == .dark ? "upload_dm" :"upload")
                 .font(.system(size: 14))
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
+                .onTapGesture {
+                    ontap = false
+                }
             Label("AR社区文件制作", image: currentMode == .dark ? "filetext_dm" :"filetext")
                 .font(.system(size: 14))
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
+                .onTapGesture {
+                    ontap = false
+                }
             Label("便携记录", image: currentMode == .dark ? "edit_dm" :"edit")
                 .font(.system(size: 14))
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
+                .onTapGesture {
+                    ontap = false
+                }
         }
         .padding(.vertical, 4)
         .frame(width: UIScreen.main.bounds.width / 2 - 12, alignment: .leading)

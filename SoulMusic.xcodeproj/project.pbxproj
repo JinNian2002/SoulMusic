@@ -36,6 +36,8 @@
 		577B360B28AA9A76007DDC91 /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360A28AA9A76007DDC91 /* FocusView.swift */; };
 		577B360D28AA9C80007DDC91 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360C28AA9C80007DDC91 /* TravelView.swift */; };
 		577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B361028AA9E4E007DDC91 /* WelcomeView.swift */; };
+		578356E728ADE1CC008F34FB /* RemarkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E628ADE1CC008F34FB /* RemarkCard.swift */; };
+		578356E928AE4DBE008F34FB /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E828AE4DBE008F34FB /* SearchDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		577B360A28AA9A76007DDC91 /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
 		577B360C28AA9C80007DDC91 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		577B361028AA9E4E007DDC91 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		578356E628ADE1CC008F34FB /* RemarkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCard.swift; sourceTree = "<group>"; };
+		578356E828AE4DBE008F34FB /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +246,9 @@
 				577B360028AA7EF5007DDC91 /* PicCard.swift */,
 				577B360228AA7FEF007DDC91 /* CardName.swift */,
 				577B360828AA921C007DDC91 /* TextCard.swift */,
+				578356E828AE4DBE008F34FB /* SearchDetailView.swift */,
 				577B360428AA8009007DDC91 /* CardBar.swift */,
+				578356E628ADE1CC008F34FB /* RemarkCard.swift */,
 				577B35F028AA38A3007DDC91 /* SearchView.swift */,
 				577B35FE28AA70A4007DDC91 /* Extension.swift */,
 			);
@@ -396,7 +402,9 @@
 				577B360B28AA9A76007DDC91 /* FocusView.swift in Sources */,
 				577B35FB28AA6D6C007DDC91 /* FunctionView.swift in Sources */,
 				577B35FF28AA70A4007DDC91 /* Extension.swift in Sources */,
+				578356E728ADE1CC008F34FB /* RemarkCard.swift in Sources */,
 				577B360D28AA9C80007DDC91 /* TravelView.swift in Sources */,
+				578356E928AE4DBE008F34FB /* SearchDetailView.swift in Sources */,
 				5756136528AB9359002F6F1C /* SongList.swift in Sources */,
 				577B35EF28AA0DEE007DDC91 /* TabbarView.swift in Sources */,
 				577B35F128AA38A3007DDC91 /* SearchView.swift in Sources */,
@@ -577,7 +585,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,7 +616,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

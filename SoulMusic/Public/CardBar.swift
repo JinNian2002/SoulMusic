@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CardBar: View {
     @Environment(\.colorScheme) var currentMode
-    @EnvironmentObject var piccarddatas : Model
+    @EnvironmentObject var remarkdatas : Model
     @State var heart = false
+    @State var sheetshow = false
     var sharenum = 0
     var messagenum = 0
     var heartnum = 0
@@ -26,6 +27,35 @@ struct CardBar: View {
                 Image(currentMode == .dark ? "message_20_dm" :"message_20")
                 Text("\(messagenum)")
                     .font(.system(size: 12))
+            }
+            .onTapGesture {
+                sheetshow = true
+            }
+            //评论页面
+            .sheet(isPresented: $sheetshow) {
+                VStack{
+                    HStack{
+                        Image("x_24")
+                            .padding(12)
+                            .hidden()
+                        Spacer()
+                        Text("评论")
+                        Spacer()
+                        Image(currentMode == .dark ? "x_24_dm" : "x_24")
+                            .padding(12)
+                            .onTapGesture {
+                                sheetshow = false
+                            }
+                    }
+                    ScrollView{
+                        VStack{
+                            ForEach(remarkdatas.Remarkdatas) { item in
+                                RemarkCard(image: item.image, username: item.username, time: item.time, text: item.text)
+                            }
+                        }
+                        .padding(.horizontal, 24)
+                    }
+                }
             }
             Spacer()
             HStack(spacing: 6){

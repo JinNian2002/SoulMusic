@@ -26,6 +26,13 @@ struct PicCarddata : Identifiable{
     var heart: Bool
     var type: String
 }
+struct Remarkdata : Identifiable{
+    var id: Int
+    var image: String
+    var username: String
+    var text: String
+    var time: String
+}
 enum Selection{
     case listen
     case musiclibrary
@@ -50,5 +57,13 @@ class Model : ObservableObject{
     PicCarddata(id: 2, image: "profilepic3", username: "孙笑川", time: "8月6日 12:26", text: "我从你们那没事了。", pic: "", sharenum: 133, messagenum: 26, heartnum: 245, heart: false, type: "text"),
     PicCarddata(id: 3, image: "profilepic4", username: "清风", time: "7月13日 11:06", text: "故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。", pic: "", sharenum: 93, messagenum: 95, heartnum: 251, heart: false, type: "text"),
     PicCarddata(id: 4, image: "profilepic5", username: "瑾年", time: "7月10日 15:34", text: "君不见，黄河之水天上来，奔流到海不复回。\n君不见，高堂明镜悲白发，朝如青丝暮成雪。", pic: "store", sharenum: 113, messagenum: 125, heartnum: 355, heart: false, type: "text"),
+    ]
+    var Remarkdatas : [Remarkdata] = [
+    Remarkdata(id: 0, image: "profilepic1", username: "JinNian", text: "今朝有酒今朝醉", time: "8月1日"),
+    Remarkdata(id: 1, image: "profilepic2", username: "C60", text: "我带你们打", time: "8月2日"),
+    Remarkdata(id: 2, image: "profilepic3", username: "神勇金雕", text: "孤帆远影碧空尽，唯见长江天际流。", time: "8月2日"),
+    Remarkdata(id: 3, image: "profilepic4", username: "大黑牛", text: "我带你们打", time: "8月2日"),
+    Remarkdata(id: 4, image: "profilepic5", username: "大方🤔", text: "故人西辞黄鹤楼，烟花三月下扬州。", time: "8月2日"),
+    Remarkdata(id: 5, image: "profilepic6", username: "官方活动", text: "君不见，黄河之水天上来，奔流到海不复回。\n君不见，高堂明镜悲白发，朝如青丝暮成雪。", time: "8月2日")
     ]
 }

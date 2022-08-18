@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    @Environment(\.colorScheme) var currentMode
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -18,6 +18,7 @@ struct ContentView: View {
     @State var placeholdertext = ""
     @State var isselect = 0
     @State var ontap = false
+    @State var  issearch = false
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
@@ -26,7 +27,7 @@ struct ContentView: View {
                 VStack(spacing: 0){
                     VStack{
                         //搜索栏
-                        SearchView(placeholdertext: $placeholdertext, ontap: $ontap)
+                        SearchView(placeholdertext: $placeholdertext, ontap: $ontap, issearch: $issearch)
                         //TabView
                         TabtitleView(isselect: $isselect)
                     }
@@ -79,12 +80,16 @@ struct ContentView: View {
                 .opacity(ontap ? 1:0)
                 .scaleEffect(ontap ? 1:0)
                 .offset(x: UIScreen.main.bounds.width * 0.5 - 12, y: -UIScreen.main.bounds.height * 0.41)
+                //SearchDetailView
+                if issearch{
+                    SearchDetailView(issearch: $issearch)
+                }
                 
             }
             .navigationBarHidden(true)
         }
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)

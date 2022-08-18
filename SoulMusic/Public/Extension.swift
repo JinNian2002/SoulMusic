@@ -18,3 +18,22 @@ extension Image{
             .clipped()
     }
 }
+extension Text{
+    func searchButton() -> some View {
+        self
+            .font(.system(size: 14))
+            .foregroundColor(Color("FontSecondary"))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 4)
+            .background(Color("Surface"), in: RoundedRectangle(cornerRadius: 5))
+            .padding(1)
+            .background(Color("FontSecondary"), in: RoundedRectangle(cornerRadius: 5))
+    }
+}
+#if canImport(UIKit)
+extension View {
+    func hidekeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif

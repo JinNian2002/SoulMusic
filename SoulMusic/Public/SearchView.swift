@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @Binding var placeholdertext: String
     @Binding var ontap : Bool
+    @Binding var issearch : Bool
     var body: some View {
         HStack{
             HStack{
@@ -20,6 +21,11 @@ struct SearchView: View {
             .padding(.vertical ,4)
             .padding(.horizontal, 13)
             .background(Color("Input"), in: RoundedRectangle(cornerRadius: 50))
+            .onTapGesture {
+                withAnimation {
+                    issearch = true
+                }
+            }
             Spacer()
             HStack{
                 Image("plus")
@@ -41,5 +47,6 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Model())
     }
 }
