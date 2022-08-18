@@ -52,7 +52,7 @@ struct SearchDetailView: View {
                             Text("信物")
                                 .searchButton()
                             Spacer()
-                            Image("chevron_24_front")
+                            Image(currentMode == .dark ? "chevron_24_front_dm" : "chevron_24_front")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 20, height: 20)

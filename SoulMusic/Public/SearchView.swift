@@ -17,15 +17,16 @@ struct SearchView: View {
                 Image("search")
                 TextField("搜索用户、动态、音乐...", text: $placeholdertext)
                     .font(.system(size: 13.5, weight: .light))
+                    .onTapGesture {
+                        withAnimation (.easeIn(duration: 0.1)){
+                            issearch = true
+                        }
+                    }
             }
             .padding(.vertical ,4)
             .padding(.horizontal, 13)
             .background(Color("Input"), in: RoundedRectangle(cornerRadius: 50))
-            .onTapGesture {
-                withAnimation {
-                    issearch = true
-                }
-            }
+            
             Spacer()
             HStack{
                 Image("plus")
