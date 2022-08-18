@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingView: View {
     @Environment(\.colorScheme) var currentMode
+    @Environment(\.dismiss) var dismiss
+    @State var DragValues : CGFloat = 0
     var body: some View {
             VStack(spacing: 0){
                 NavView(isshowfront: false, Navtitle: "设置")
@@ -36,6 +38,27 @@ struct SettingView: View {
                     }
                 }
             }
+            .gesture(
+                DragGesture()
+                    .onChanged({ dragvalue in
+                        guard dragvalue.translation.width > 0 else {return}
+                        guard dragvalue.startLocation.x < UIScreen.main.bounds.width / 3 else {return}
+                        withAnimation (.linear){
+                            DragValues = dragvalue.translation.width
+                        }
+                    })
+                    .onEnded({ endvalue in
+                        if endvalue.translation.width > 80{
+                            withAnimation (.linear){
+                                dismiss()
+                            }
+                        }
+                        withAnimation (.linear){
+                            DragValues = 0
+                        }
+                    })
+            )
+            .offset(x: DragValues)
         }
     }
 //SettingCard

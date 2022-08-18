@@ -30,6 +30,15 @@ extension Text{
             .background(Color("FontSecondary"), in: RoundedRectangle(cornerRadius: 5))
     }
 }
+extension UINavigationController : UIGestureRecognizerDelegate{
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = self
+    }
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return viewControllers.count > 1
+    }
+}
 #if canImport(UIKit)
 extension View {
     func hidekeyboard() {
