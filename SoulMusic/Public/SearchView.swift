@@ -22,6 +22,14 @@ struct SearchView: View {
                             issearch = true
                         }
                     }
+                if issearch {
+                    Button{
+                        placeholdertext = ""
+                    }label: {
+                        Image(systemName: "xmark.circle.fill")
+                    }
+                    .foregroundColor(.black.opacity(0.4))
+                }
             }
             .padding(.vertical ,4)
             .padding(.horizontal, 13)
