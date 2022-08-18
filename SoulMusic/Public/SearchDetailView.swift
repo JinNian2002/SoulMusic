@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchDetailView: View {
     @Environment(\.colorScheme) var currentMode
     @Binding var issearch : Bool
+    @Binding var placeholdertext : String
     var body: some View {
         VStack{
             HStack{
@@ -23,7 +24,7 @@ struct SearchDetailView: View {
                         withAnimation (.easeIn(duration: 0.1)){
                             issearch = false
                         }
-                        
+                        placeholdertext = ""
                     }
             }
             VStack{

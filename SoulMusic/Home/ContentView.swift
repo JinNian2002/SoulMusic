@@ -82,7 +82,7 @@ struct ContentView: View {
                 .offset(x: UIScreen.main.bounds.width * 0.5 - 12, y: -UIScreen.main.bounds.height * 0.41)
                 //SearchDetailView
                 if issearch{
-                    SearchDetailView(issearch: $issearch)
+                    SearchDetailView(issearch: $issearch, placeholdertext: $placeholdertext)
                 }
                 
             }
