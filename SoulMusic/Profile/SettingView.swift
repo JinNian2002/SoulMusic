@@ -38,27 +38,28 @@ struct SettingView: View {
                     }
                 }
             }
-            .gesture(
-                DragGesture()
-                    .onChanged({ dragvalue in
-                        guard dragvalue.translation.width > 0 else {return}
-                        guard dragvalue.startLocation.x < UIScreen.main.bounds.width / 3 else {return}
-                        withAnimation (.linear){
-                            DragValues = dragvalue.translation.width
-                        }
-                    })
-                    .onEnded({ endvalue in
-                        if endvalue.translation.width > 80{
-                            withAnimation (.linear){
-                                dismiss()
-                            }
-                        }
-                        withAnimation (.linear){
-                            DragValues = 0
-                        }
-                    })
-            )
-            .offset(x: DragValues)
+        //已解决右滑手势
+//            .gesture(
+//                DragGesture()
+//                    .onChanged({ dragvalue in
+//                        guard dragvalue.translation.width > 0 else {return}
+//                        guard dragvalue.startLocation.x < UIScreen.main.bounds.width / 3 else {return}
+//                        withAnimation (.linear){
+//                            DragValues = dragvalue.translation.width
+//                        }
+//                    })
+//                    .onEnded({ endvalue in
+//                        if endvalue.translation.width > 80{
+//                            withAnimation (.linear){
+//                                dismiss()
+//                            }
+//                        }
+//                        withAnimation (.linear){
+//                            DragValues = 0
+//                        }
+//                    })
+//            )
+//            .offset(x: DragValues)
         }
     }
 //SettingCard

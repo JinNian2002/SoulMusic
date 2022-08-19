@@ -19,6 +19,7 @@ struct ContentView: View {
     @State var isselect = 0
     @State var ontap = false
     @State var  issearch = false
+    @State var DragValue : CGFloat = 0.1
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
@@ -26,14 +27,15 @@ struct ContentView: View {
             ZStack{
                 VStack(spacing: 0){
                     VStack{
-                        //搜索栏
-                        SearchView(placeholdertext: $placeholdertext, ontap: $ontap, issearch: $issearch)
+                        if DragValue > 0{
+                            //搜索栏
+                            SearchView(placeholdertext: $placeholdertext, ontap: $ontap, issearch: $issearch)
+                        }
                         //TabView
                         TabtitleView(isselect: $isselect)
                     }
                     .background(Color("Surface"))
                     .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
-                    
                     TabView(selection: $isselect){
                         //Recommend
                         RecommendView(piccarddatas: _piccarddatas)
@@ -49,6 +51,19 @@ struct ContentView: View {
                         .tag(3)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
+                    .gesture(DragGesture()
+                        .onChanged({ dragvalue in
+                            withAnimation (.linear(duration: 0.25)){
+                                DragValue = dragvalue.translation.height
+                            }
+                            
+                        })
+                            .onEnded({ endvalue in
+                                withAnimation (.linear(duration: 0.25)){
+                                    DragValue = 0
+                                }
+                            })
+                    )
                     //Tabbar
                     TabbarView()
                 }
