@@ -12,6 +12,8 @@ struct CardBar: View {
     @EnvironmentObject var remarkdatas : Model
     @State var heart = false
     @State var sheetshow = false
+    @State var placeholdertext = ""
+    @Binding var shareshow : Bool
     var sharenum = 0
     var messagenum = 0
     var heartnum = 0
@@ -21,6 +23,11 @@ struct CardBar: View {
                 Image(currentMode == .dark ? "share_20_dm" : "share_20")
                 Text("\(sharenum)")
                     .font(.system(size: 12))
+            }
+            .onTapGesture {
+                withAnimation (.easeOut(duration: 0.25)){
+                    shareshow = true
+                }
             }
             Spacer()
             HStack(spacing: 6){
@@ -55,6 +62,14 @@ struct CardBar: View {
                         }
                         .padding(.horizontal, 24)
                     }
+                    Divider()
+                    HStack{
+                        Image(systemName: "square.and.pencil").opacity(0.25)
+                        TextField("发表你的评论...", text: $placeholdertext)
+                            .font(.system(size: 13.5, weight: .light))
+                        Image(systemName: "at").opacity(0.25)
+                    }
+                    .padding(12)
                 }
             }
             Spacer()

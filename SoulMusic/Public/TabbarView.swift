@@ -49,6 +49,9 @@ struct TabbarView: View {
                 .mask(Circle())
                 .shadow(color: Color("Primary").opacity(0.75), radius: 8, x: 0, y: 0)
                 .offset(y: -12)
+                .onTapGesture {
+                    model.select = .arcommunity
+                }
                 HStack{
                     Spacer()
                     VStack(spacing: 0){

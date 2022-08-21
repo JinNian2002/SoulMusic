@@ -20,6 +20,8 @@ struct ContentView: View {
     @State var ontap = false
     @State var  issearch = false
     @State var DragValue : CGFloat = 0.1
+    @State var shareshow = false
+    @State var moreshow = false
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
@@ -38,16 +40,16 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
                     TabView(selection: $isselect){
                         //Recommend
-                        RecommendView(piccarddatas: _piccarddatas)
+                        RecommendView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
                             .tag(0)
                         //Focus
-                        FocusView(piccarddatas: _piccarddatas)
+                        FocusView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
                             .tag(1)
                         //Travel
-                        TravelView(piccarddatas: _piccarddatas)
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
                         .tag(2)
                         //Comic
-                        TravelView(piccarddatas: _piccarddatas)
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
                         .tag(3)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
@@ -99,7 +101,30 @@ struct ContentView: View {
                 if issearch{
                     SearchDetailView(issearch: $issearch, placeholdertext: $placeholdertext)
                 }
-                
+                if shareshow{
+                    Color.black.opacity(0.25)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            withAnimation (.easeIn(duration: 0.25)){
+                                shareshow = false
+                            }
+                        }
+                }
+                ShareView(shareshow: $shareshow)
+                    .offset(y: shareshow ? 0 : 323.7)
+                .ignoresSafeArea()
+                if moreshow{
+                    Color.black.opacity(0.25)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            withAnimation (.easeIn(duration: 0.25)){
+                                moreshow = false
+                            }
+                        }
+                }
+                MoreView(moreshow: $moreshow)
+                    .offset(y: moreshow ? 0 : 232)
+                    .ignoresSafeArea()
             }
             .navigationBarHidden(true)
         }

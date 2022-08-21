@@ -39,9 +39,7 @@ struct SearchView: View {
             HStack{
                 Image("plus")
             }
-            .frame(width: 28, height: 28, alignment: .center)
-            .background(Color("Primary"))
-            .mask(Circle())
+            .circleIcon(width: 28, height: 28)
             .rotationEffect(Angle.degrees(ontap ? 45: 0))
             .onTapGesture {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.8, blendDuration: 0.1)){

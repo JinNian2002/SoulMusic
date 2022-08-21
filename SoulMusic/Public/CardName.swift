@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardName: View {
     @Environment(\.colorScheme) var currentMode
+    @Binding var moreshow : Bool
     var username = ""
     var time = ""
     var image = ""
@@ -26,12 +27,17 @@ struct CardName: View {
             }
             Spacer()
             Image(currentMode == .dark ? "more_dm" : "more")
+                .onTapGesture {
+                    withAnimation (.easeOut(duration: 0.25)){
+                        moreshow = true
+                    }
+                }
         }
     }
 }
 
 struct CardName_Previews: PreviewProvider {
     static var previews: some View {
-        CardName()
+        CardName(moreshow: .constant(false))
     }
 }

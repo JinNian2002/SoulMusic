@@ -10,6 +10,8 @@ import SwiftUI
 struct TravelView: View {
     @EnvironmentObject var piccarddatas : Model
     @Environment(\.colorScheme) var currentMode
+    @Binding var shareshow : Bool
+    @Binding var moreshow : Bool
     var body: some View {
         ScrollView(.vertical){
             VStack{
@@ -28,7 +30,7 @@ struct TravelView: View {
                 .padding(.vertical, 12)
                 VStack{
                     ForEach(piccarddatas.PicCarddatas) { item in
-                        PicCard(heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
+                        PicCard(shareshow: $shareshow, moreshow: $moreshow, heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
                     }
                 }
             }
@@ -38,7 +40,7 @@ struct TravelView: View {
 
 struct TravelView_Previews: PreviewProvider {
     static var previews: some View {
-        TravelView()
+        TravelView(shareshow: .constant(false), moreshow: .constant(false))
             .environmentObject(Model())
     }
 }

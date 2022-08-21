@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RecommendView: View {
     @EnvironmentObject var piccarddatas : Model
+    @Binding var shareshow : Bool
+    @Binding var moreshow : Bool
     var body: some View {
         ScrollView(.vertical){
             FunctionView()
@@ -22,7 +24,7 @@ struct RecommendView: View {
             .padding(.vertical, 5)
             VStack{
                 ForEach(piccarddatas.PicCarddatas) { item in
-                    PicCard(heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
+                    PicCard(shareshow: $shareshow, moreshow: $moreshow, heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
                 }
             }
         }
@@ -31,7 +33,7 @@ struct RecommendView: View {
 
 struct RecommendView_Previews: PreviewProvider {
     static var previews: some View {
-        RecommendView()
+        RecommendView(shareshow: .constant(false), moreshow: .constant(false))
             .environmentObject(Model())
     }
 }

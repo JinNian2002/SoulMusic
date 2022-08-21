@@ -10,19 +10,25 @@ import SwiftUI
 struct FunctionView: View {
     var body: some View {
         HStack(alignment: .center){
-            VStack{
-                Text("聆物")
-                    .font(.system(size: 24, weight: .medium))
-                    
+            NavigationLink{
+                CameraView()
+                    .navigationBarHidden(true)
+            }label: {
+                VStack{
+                    Text("聆物")
+                        .font(.system(size: 24, weight: .medium))
+                        
+                }
+                .frame(width: UIScreen.main.bounds.width / 2 - 32.5, height: UIScreen.main.bounds.width / 2 - 32.5, alignment: .center)
+                .foregroundColor(.white)
+                .background(Image("listentoobject").resizable().aspectRatio(contentMode: .fill))
+                .cornerRadius(12)
+                .clipped()
+                .padding(4)
+                .background(Color("Primary"))
+                .cornerRadius(14)
             }
-            .frame(width: UIScreen.main.bounds.width / 2 - 32.5, height: UIScreen.main.bounds.width / 2 - 32.5, alignment: .center)
-            .foregroundColor(.white)
-            .background(Image("listentoobject").resizable().aspectRatio(contentMode: .fill))
-            .cornerRadius(12)
-            .clipped()
-            .padding(4)
-            .background(Color("Primary"))
-            .cornerRadius(14)
+            
             Spacer()
             VStack{
                 HStack{

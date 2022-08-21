@@ -32,12 +32,15 @@
 		577B360328AA7FEF007DDC91 /* CardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360228AA7FEF007DDC91 /* CardName.swift */; };
 		577B360528AA8009007DDC91 /* CardBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360428AA8009007DDC91 /* CardBar.swift */; };
 		577B360728AA9089007DDC91 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360628AA9089007DDC91 /* RecommendView.swift */; };
-		577B360928AA921C007DDC91 /* TextCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360828AA921C007DDC91 /* TextCard.swift */; };
 		577B360B28AA9A76007DDC91 /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360A28AA9A76007DDC91 /* FocusView.swift */; };
 		577B360D28AA9C80007DDC91 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B360C28AA9C80007DDC91 /* TravelView.swift */; };
 		577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B361028AA9E4E007DDC91 /* WelcomeView.swift */; };
 		578356E728ADE1CC008F34FB /* RemarkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E628ADE1CC008F34FB /* RemarkCard.swift */; };
 		578356E928AE4DBE008F34FB /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E828AE4DBE008F34FB /* SearchDetailView.swift */; };
+		57EE451C28AFE10E005F50A9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE451B28AFE10E005F50A9 /* CameraView.swift */; };
+		57F76C8728B14F4600368CE7 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F76C8628B14F4600368CE7 /* ShareView.swift */; };
+		57F76C8928B161A800368CE7 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F76C8828B161A800368CE7 /* MoreView.swift */; };
+		57FE773C28B0C2BA007A0C6A /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57FE773B28B0C2BA007A0C6A /* MobileNetV2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,12 +89,15 @@
 		577B360228AA7FEF007DDC91 /* CardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardName.swift; sourceTree = "<group>"; };
 		577B360428AA8009007DDC91 /* CardBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBar.swift; sourceTree = "<group>"; };
 		577B360628AA9089007DDC91 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
-		577B360828AA921C007DDC91 /* TextCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCard.swift; sourceTree = "<group>"; };
 		577B360A28AA9A76007DDC91 /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
 		577B360C28AA9C80007DDC91 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		577B361028AA9E4E007DDC91 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		578356E628ADE1CC008F34FB /* RemarkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCard.swift; sourceTree = "<group>"; };
 		578356E828AE4DBE008F34FB /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
+		57EE451B28AFE10E005F50A9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		57F76C8628B14F4600368CE7 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		57F76C8828B161A800368CE7 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		57FE773B28B0C2BA007A0C6A /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 		577B35B628AA04B3007DDC91 /* SoulMusic */ = {
 			isa = PBXGroup;
 			children = (
+				57FE773B28B0C2BA007A0C6A /* MobileNetV2.mlmodel */,
 				577B35B728AA04B3007DDC91 /* SoulMusicApp.swift */,
 				577B35E628AA0C4F007DDC91 /* Home */,
 				577B35E728AA0C88007DDC91 /* Listen */,
@@ -240,12 +247,14 @@
 		577B35EC28AA0D6A007DDC91 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				57EE451B28AFE10E005F50A9 /* CameraView.swift */,
+				57F76C8628B14F4600368CE7 /* ShareView.swift */,
+				57F76C8828B161A800368CE7 /* MoreView.swift */,
 				577B35EE28AA0DEE007DDC91 /* TabbarView.swift */,
 				5756136828AB9A63002F6F1C /* NavView.swift */,
 				5756136428AB9359002F6F1C /* SongList.swift */,
 				577B360028AA7EF5007DDC91 /* PicCard.swift */,
 				577B360228AA7FEF007DDC91 /* CardName.swift */,
-				577B360828AA921C007DDC91 /* TextCard.swift */,
 				578356E828AE4DBE008F34FB /* SearchDetailView.swift */,
 				577B360428AA8009007DDC91 /* CardBar.swift */,
 				578356E628ADE1CC008F34FB /* RemarkCard.swift */,
@@ -393,7 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				577B360928AA921C007DDC91 /* TextCard.swift in Sources */,
 				5745159028ABE07B00CA0DDA /* MenuView.swift in Sources */,
 				577B35F328AA432C007DDC91 /* Data.swift in Sources */,
 				577B35C128AA04B5007DDC91 /* Persistence.swift in Sources */,
@@ -407,13 +415,17 @@
 				578356E928AE4DBE008F34FB /* SearchDetailView.swift in Sources */,
 				5756136528AB9359002F6F1C /* SongList.swift in Sources */,
 				577B35EF28AA0DEE007DDC91 /* TabbarView.swift in Sources */,
+				57F76C8728B14F4600368CE7 /* ShareView.swift in Sources */,
+				57FE773C28B0C2BA007A0C6A /* MobileNetV2.mlmodel in Sources */,
 				577B35F128AA38A3007DDC91 /* SearchView.swift in Sources */,
+				57F76C8928B161A800368CE7 /* MoreView.swift in Sources */,
 				577B360528AA8009007DDC91 /* CardBar.swift in Sources */,
 				5756136928AB9A63002F6F1C /* NavView.swift in Sources */,
 				577B360328AA7FEF007DDC91 /* CardName.swift in Sources */,
 				5756136328AB8241002F6F1C /* MainView.swift in Sources */,
 				577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */,
 				577B360128AA7EF5007DDC91 /* PicCard.swift in Sources */,
+				57EE451C28AFE10E005F50A9 /* CameraView.swift in Sources */,
 				577B35F928AA5112007DDC91 /* TabtitleView.swift in Sources */,
 				5756136128AAC346002F6F1C /* ProfileView.swift in Sources */,
 				577B35B828AA04B3007DDC91 /* SoulMusicApp.swift in Sources */,
@@ -581,9 +593,12 @@
 				DEVELOPMENT_TEAM = L6CURLFW6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App需要访问您的相机";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App需要访问您的相机";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,7 +611,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -612,9 +627,12 @@
 				DEVELOPMENT_TEAM = L6CURLFW6J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App需要访问您的相机";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App需要访问您的相机";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -627,7 +645,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
