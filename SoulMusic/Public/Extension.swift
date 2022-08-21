@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import UIKit
+import CoreML
 
 extension Image{
     func circleImage(width: CGFloat, height: CGFloat) -> some View {
@@ -27,7 +29,7 @@ extension Text{
             .padding(.vertical, 4)
             .background(Color("Surface"), in: RoundedRectangle(cornerRadius: 5))
             .padding(1)
-            .background(Color("FontSecondary"), in: RoundedRectangle(cornerRadius: 5))
+            .background(Color("FontSecondary"), in: RoundedRectangle(cornerRadius: 6))
     }
 }
 extension HStack{

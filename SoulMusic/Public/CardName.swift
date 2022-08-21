@@ -10,13 +10,19 @@ import SwiftUI
 struct CardName: View {
     @Environment(\.colorScheme) var currentMode
     @Binding var moreshow : Bool
+    @Binding var peopleprofilemoreshow : Bool
     var username = ""
     var time = ""
     var image = ""
     var body: some View {
         HStack{
-            Image(image)
-                .circleImage(width: 40, height: 40)
+            NavigationLink{
+                PeopleProfileView(peopleprofilemoreshow: $peopleprofilemoreshow)
+                    .navigationBarHidden(true)
+            }label: {
+                Image(image)
+                    .circleImage(width: 40, height: 40)
+            }
             VStack(alignment: .leading, spacing: 4){
                 Text(username)
                     .font(.system(size: 14))
@@ -38,6 +44,6 @@ struct CardName: View {
 
 struct CardName_Previews: PreviewProvider {
     static var previews: some View {
-        CardName(moreshow: .constant(false))
+        CardName(moreshow: .constant(false), peopleprofilemoreshow: .constant(false))
     }
 }

@@ -33,6 +33,13 @@ struct Remarkdata : Identifiable{
     var text: String
     var time: String
 }
+struct Notdata : Identifiable{
+    var id: Int
+    var image: String
+    var username: String
+    var text: String
+    var time: String
+}
 enum Selection{
     case listen
     case musiclibrary
@@ -65,5 +72,18 @@ class Model : ObservableObject{
     Remarkdata(id: 3, image: "profilepic4", username: "大黑牛", text: "我带你们打", time: "8月2日"),
     Remarkdata(id: 4, image: "profilepic5", username: "大方🤔", text: "故人西辞黄鹤楼，烟花三月下扬州。", time: "8月2日"),
     Remarkdata(id: 5, image: "profilepic6", username: "官方活动", text: "君不见，黄河之水天上来，奔流到海不复回。\n君不见，高堂明镜悲白发，朝如青丝暮成雪。", time: "8月2日")
+    ]
+    var Notdatas : [Notdata] = [
+        Notdata(id: 0, image: "profilepic1", username: "JinNian", text: "今朝有酒今朝醉", time: "8月1日"),
+        Notdata(id: 1, image: "profilepic2", username: "C60", text: "我带你们打", time: "8月2日"),
+        Notdata(id: 2, image: "profilepic3", username: "神勇金雕", text: "孤帆远影碧空尽，唯见长江天际流。", time: "8月2日"),
+        Notdata(id: 3, image: "profilepic4", username: "大黑牛", text: "我带你们打", time: "8月2日"),
+        Notdata(id: 4, image: "profilepic5", username: "大方🤔", text: "故人西辞黄鹤楼，烟花三月下扬州。", time: "8月2日"),
+        Notdata(id: 5, image: "profilepic6", username: "官方活动", text: "君不见，黄河之水天上...", time: "8月2日"),
+        Notdata(id: 6, image: "profilepic7", username: "多个地方", text: "今朝有酒今朝醉", time: "8月1日"),
+        Notdata(id: 7, image: "profilepic8", username: "较高的", text: "我带你们打", time: "8月2日"),
+        Notdata(id: 8, image: "profilepic9", username: "适合发呆", text: "孤帆远影碧空尽，唯见长江天际流。", time: "8月2日"),
+        Notdata(id: 9, image: "profilepic10", username: "恢复", text: "我带你们打", time: "8月2日"),
+        Notdata(id: 10, image: "profilepic11", username: "古诗", text: "故人西辞黄鹤楼，烟花三月下扬州。", time: "8月2日")
     ]
 }

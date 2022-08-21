@@ -12,6 +12,7 @@ struct FocusView: View {
     @EnvironmentObject var piccarddatas : Model
     @Binding var shareshow: Bool
     @Binding var moreshow : Bool
+    @Binding var peopleprofilemoreshow : Bool
     var body: some View {
         ScrollView(.vertical){
             VStack{
@@ -55,7 +56,7 @@ struct FocusView: View {
                 .padding(.vertical, 12)
                 VStack{
                     ForEach(piccarddatas.PicCarddatas) { item in
-                        PicCard(shareshow: $shareshow, moreshow: $moreshow, heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
+                        PicCard(shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
                     }
                 }
             }
@@ -65,7 +66,7 @@ struct FocusView: View {
 
 struct FocusView_Previews: PreviewProvider {
     static var previews: some View {
-        FocusView(shareshow: .constant(false), moreshow: .constant(false))
+        FocusView(shareshow: .constant(false), moreshow: .constant(false), peopleprofilemoreshow: .constant(false))
             .environmentObject(Model())
     }
 }

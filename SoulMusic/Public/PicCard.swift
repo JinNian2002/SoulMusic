@@ -10,6 +10,7 @@ import SwiftUI
 struct PicCard: View {
     @Binding var shareshow : Bool
     @Binding var moreshow : Bool
+    @Binding var peopleprofilemoreshow : Bool
     var heart = false
     var username = ""
     var time = ""
@@ -22,7 +23,7 @@ struct PicCard: View {
     var item : PicCarddata
     var body: some View {
         VStack(alignment: .leading, spacing: 18){
-            CardName(moreshow: $moreshow, username: username, time: time, image: image)
+            CardName(moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, username: username, time: time, image: image)
             if item.type == "pic" {
                 Text(text)
                     .font(.system(size: 16))

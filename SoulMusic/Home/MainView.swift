@@ -27,11 +27,7 @@ struct MainView: View {
                 TabbarView()
             }
         case .message:
-            VStack{
-                Text("1")
-                Spacer()
-                TabbarView()
-            }
+            NotView()
         case .profile:
             ProfileView()
         }

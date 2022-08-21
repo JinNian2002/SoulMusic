@@ -22,6 +22,19 @@ struct ContentView: View {
     @State var DragValue : CGFloat = 0.1
     @State var shareshow = false
     @State var moreshow = false
+    @State var publishshow = false
+    @State var texteditor = ""
+    @State var screenbutton = ""
+    @State var musicshow = false
+    @State var albumname = ""
+    @State var noteshow = false
+    @State var aria1 = false
+    @State var aria2 = false
+    @State var aria3 = false
+    @State var textfeild1 = ""
+    @State var textfeild2 = ""
+    @State var textfeild3 = ""
+    @State var peopleprofilemoreshow = false
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
@@ -31,7 +44,7 @@ struct ContentView: View {
                     VStack{
                         if DragValue > 0{
                             //搜索栏
-                            SearchView(placeholdertext: $placeholdertext, ontap: $ontap, issearch: $issearch)
+                            SearchView(placeholdertext: $placeholdertext, ontap: $ontap, issearch: $issearch, publishshow: $publishshow)
                         }
                         //TabView
                         TabtitleView(isselect: $isselect)
@@ -40,16 +53,16 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
                     TabView(selection: $isselect){
                         //Recommend
-                        RecommendView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
+                        RecommendView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
                             .tag(0)
                         //Focus
-                        FocusView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
+                        FocusView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
                             .tag(1)
                         //Travel
-                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
                         .tag(2)
                         //Comic
-                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow)
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
                         .tag(3)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
@@ -84,13 +97,13 @@ struct ContentView: View {
                 //Menu
                 VStack{
                     HStack{
-                        MenuView(ontap: $ontap)
-                        MenuView(ontap: $ontap)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
                     }
                     .hidden()
                     HStack{
-                        MenuView(ontap: $ontap)
-                        MenuView(ontap: $ontap)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
                             .hidden()
                     }
                 }

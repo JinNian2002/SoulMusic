@@ -40,7 +40,7 @@ struct CardBar: View {
             }
             //评论页面
             .sheet(isPresented: $sheetshow) {
-                VStack{
+                VStack(spacing: 0){
                     HStack{
                         Image("x_24")
                             .padding(12)
@@ -67,6 +67,7 @@ struct CardBar: View {
                         Image(systemName: "square.and.pencil").opacity(0.25)
                         TextField("发表你的评论...", text: $placeholdertext)
                             .font(.system(size: 13.5, weight: .light))
+                        
                         Image(systemName: "at").opacity(0.25)
                     }
                     .padding(12)

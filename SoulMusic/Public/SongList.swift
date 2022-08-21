@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SongList: View {
     @Environment(\.colorScheme) var currentMode
+    @Binding var profilemoreshow : Bool
     var body: some View {
         HStack{
             HStack{
@@ -29,12 +30,18 @@ struct SongList: View {
             Spacer()
             Image(currentMode == .dark ? "more_dm" : "more")
                 .padding(12)
+                .onTapGesture {
+                    withAnimation (.easeOut(duration: 0.25)){
+                        profilemoreshow = true
+                    }
+                    
+                }
         }
     }
 }
 
 struct SongList_Previews: PreviewProvider {
     static var previews: some View {
-        SongList()
+        SongList(profilemoreshow: .constant(false))
     }
 }

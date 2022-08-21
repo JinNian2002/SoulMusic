@@ -11,6 +11,7 @@ struct SettingView: View {
     @Environment(\.colorScheme) var currentMode
     @Environment(\.dismiss) var dismiss
     @State var DragValues : CGFloat = 0
+    @State var logoutshow : Bool = false
     var body: some View {
             VStack(spacing: 0){
                 NavView(isshowfront: false, Navtitle: "设置")
@@ -34,6 +35,18 @@ struct SettingView: View {
                         }
                         VStack{
                             SettingCard(icon: currentMode == .dark ? "power_dm":"power", text: "退出登录", chevron: currentMode == .dark ? "chevron_24_front": "chevron_24_front_dm")
+                                .onTapGesture {
+                                    logoutshow = true
+                                }
+                                .confirmationDialog("", isPresented: $logoutshow) {
+                                    VStack{
+                                        Button{
+                                            
+                                        }label: {
+                                            Text("退出登录")
+                                        }
+                                    }
+                                }
                         }
                     }
                 }
@@ -76,6 +89,6 @@ func SettingCard(icon: String, text: String, chevron: String) -> some View{
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView()
+        SettingView(logoutshow: false)
     }
 }
