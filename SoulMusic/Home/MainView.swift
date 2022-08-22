@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var model : Model
+    @State  var arshow = false
     var body: some View {
         switch model.select{
         case .listen:
@@ -17,14 +18,7 @@ struct MainView: View {
             VStack{
                 Text("1")
                 Spacer()
-                TabbarView()
-            }
-            
-        case .arcommunity:
-            VStack{
-                Text("1")
-                Spacer()
-                TabbarView()
+                TabbarView(arshow: $arshow)
             }
         case .message:
             NotView()

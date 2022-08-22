@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import UIKit
 import CoreML
+import RealityKit
 
 extension Image{
     func circleImage(width: CGFloat, height: CGFloat) -> some View {

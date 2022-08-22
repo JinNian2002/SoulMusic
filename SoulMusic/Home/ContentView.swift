@@ -35,6 +35,7 @@ struct ContentView: View {
     @State var textfeild2 = ""
     @State var textfeild3 = ""
     @State var peopleprofilemoreshow = false
+    @State var arshow = false
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
@@ -80,7 +81,7 @@ struct ContentView: View {
                             })
                     )
                     //Tabbar
-                    TabbarView()
+                    TabbarView(arshow: $arshow)
                 }
                 .background(Color("Background"))
                 

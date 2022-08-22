@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570070BF28B390C700E1C71F /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 570070BE28B390C700E1C71F /* test.mp4 */; };
 		571A15D528B22F900044C99B /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D428B22F900044C99B /* FullScreenView.swift */; };
 		571A15D728B26BD40044C99B /* AriaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D628B26BD40044C99B /* AriaCard.swift */; };
 		571A15D928B2719C0044C99B /* ProfileMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D828B2719C0044C99B /* ProfileMoreView.swift */; };
@@ -14,6 +15,7 @@
 		571A15DF28B2847E0044C99B /* NotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15DE28B2847E0044C99B /* NotView.swift */; };
 		571A15E128B285700044C99B /* NotSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15E028B285700044C99B /* NotSearchView.swift */; };
 		571A15E328B290560044C99B /* NotCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15E228B290560044C99B /* NotCard.swift */; };
+		5743682C28B36B4200BD9AAC /* ARcommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743682B28B36B4200BD9AAC /* ARcommunityView.swift */; };
 		5745159028ABE07B00CA0DDA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5745158F28ABE07B00CA0DDA /* MenuView.swift */; };
 		5756136128AAC346002F6F1C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136028AAC346002F6F1C /* ProfileView.swift */; };
 		5756136328AB8241002F6F1C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756136228AB8241002F6F1C /* MainView.swift */; };
@@ -68,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570070BE28B390C700E1C71F /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		571A15D428B22F900044C99B /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		571A15D628B26BD40044C99B /* AriaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaCard.swift; sourceTree = "<group>"; };
 		571A15D828B2719C0044C99B /* ProfileMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMoreView.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		571A15DE28B2847E0044C99B /* NotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotView.swift; sourceTree = "<group>"; };
 		571A15E028B285700044C99B /* NotSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSearchView.swift; sourceTree = "<group>"; };
 		571A15E228B290560044C99B /* NotCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotCard.swift; sourceTree = "<group>"; };
+		5743682B28B36B4200BD9AAC /* ARcommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARcommunityView.swift; sourceTree = "<group>"; };
 		5745158F28ABE07B00CA0DDA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5756136028AAC346002F6F1C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5756136228AB8241002F6F1C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5743682D28B36BD100BD9AAC /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				570070BE28B390C700E1C71F /* test.mp4 */,
+			);
+			path = videos;
+			sourceTree = "<group>";
+		};
 		577B35AB28AA04B3007DDC91 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 				577B35E828AA0CA6007DDC91 /* Musiclibrary */,
 				577B35EB28AA0D44007DDC91 /* Profile */,
 				577B35EA28AA0D38007DDC91 /* Message */,
+				5743682D28B36BD100BD9AAC /* videos */,
 				577B35E928AA0D1C007DDC91 /* ARcommunity */,
 				577B35ED28AA0D70007DDC91 /* Data */,
 				577B35EC28AA0D6A007DDC91 /* Public */,
@@ -239,6 +252,7 @@
 		577B35E928AA0D1C007DDC91 /* ARcommunity */ = {
 			isa = PBXGroup;
 			children = (
+				5743682B28B36B4200BD9AAC /* ARcommunityView.swift */,
 			);
 			path = ARcommunity;
 			sourceTree = "<group>";
@@ -398,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				577B35BF28AA04B5007DDC91 /* Preview Assets.xcassets in Resources */,
+				570070BF28B390C700E1C71F /* test.mp4 in Resources */,
 				577B35BC28AA04B5007DDC91 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +459,7 @@
 				577B35F128AA38A3007DDC91 /* SearchView.swift in Sources */,
 				571A15E128B285700044C99B /* NotSearchView.swift in Sources */,
 				57F76C8928B161A800368CE7 /* MoreView.swift in Sources */,
+				5743682C28B36B4200BD9AAC /* ARcommunityView.swift in Sources */,
 				577B360528AA8009007DDC91 /* CardBar.swift in Sources */,
 				5756136928AB9A63002F6F1C /* NavView.swift in Sources */,
 				577B360328AA7FEF007DDC91 /* CardName.swift in Sources */,

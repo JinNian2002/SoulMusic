@@ -43,7 +43,6 @@ struct Notdata : Identifiable{
 enum Selection{
     case listen
     case musiclibrary
-    case arcommunity
     case message
     case profile
 }

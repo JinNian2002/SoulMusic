@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TabbarView: View {
     @EnvironmentObject var model: Model
+    @Namespace var namespace
+    @Binding var arshow : Bool
     var body: some View {
         VStack{
             Divider()
@@ -50,7 +52,10 @@ struct TabbarView: View {
                 .shadow(color: Color("Primary").opacity(0.75), radius: 8, x: 0, y: 0)
                 .offset(y: -12)
                 .onTapGesture {
-                    model.select = .arcommunity
+                    arshow = true
+                }
+                .fullScreenCover(isPresented: $arshow) {
+                    ARcommunityView(arshow: $arshow)
                 }
                 HStack{
                     Spacer()
@@ -86,7 +91,7 @@ struct TabbarView: View {
 
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabbarView()
+        TabbarView(arshow: .constant(false))
             .environmentObject(Model())
     }
 }

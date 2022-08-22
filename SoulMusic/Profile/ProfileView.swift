@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @Environment(\.colorScheme) var currentMode
     @State var profilemoreshow = false
+    @State var arshow = false
     var body: some View {
         NavigationView{
             ZStack{
@@ -118,7 +119,7 @@ struct ProfileView: View {
                         .padding(.leading, 24)
                         .padding(.trailing, 12)
                     }
-                    TabbarView()
+                    TabbarView(arshow: $arshow)
                 }
                 .navigationBarHidden(true)
                 if profilemoreshow{

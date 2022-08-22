@@ -13,6 +13,7 @@ struct NotView: View {
     @State var ontap : Bool = false
     @State var issearch : Bool = false
     @State var isselect : Int = 0
+    @State var arshow = false
     @EnvironmentObject var notdatas : Model
     var tagwidth : CGFloat = 66
     var body: some View {
@@ -124,7 +125,7 @@ struct NotView: View {
                     .tag(0)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                TabbarView()
+                TabbarView(arshow: $arshow)
             }
             .navigationBarHidden(true)
         }

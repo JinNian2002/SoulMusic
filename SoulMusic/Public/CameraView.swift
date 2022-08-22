@@ -20,7 +20,7 @@ struct CameraView: View{
                 .ignoresSafeArea(.all)
             VStack{
                 NavView(isshowfront: false, Navtitle: "聆物")
-                    .background(Color("Surface"))
+                    .background(.ultraThinMaterial)
                 Spacer()
                 Image("scan")
                     .resizable()
