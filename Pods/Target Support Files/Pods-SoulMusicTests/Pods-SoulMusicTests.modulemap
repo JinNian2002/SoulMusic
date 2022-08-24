@@ -1,0 +1,6 @@
+framework module Pods_SoulMusicTests {
+  umbrella header "Pods-SoulMusicTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
