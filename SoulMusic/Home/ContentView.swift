@@ -18,7 +18,7 @@ struct ContentView: View {
     @State var placeholdertext = ""
     @State var isselect = 0
     @State var ontap = false
-    @State var  issearch = false
+    @State var issearch = false
     @State var DragValue : CGFloat = 0.1
     @State var shareshow = false
     @State var moreshow = false

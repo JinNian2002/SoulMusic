@@ -10,21 +10,27 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var model : Model
     @State  var arshow = false
+    @AppStorage("islogin") var islogin = false
     var body: some View {
-        switch model.select{
-        case .listen:
-            ContentView()
-        case .musiclibrary:
-            VStack{
-                Text("1")
-                Spacer()
-                TabbarView(arshow: $arshow)
+        if islogin{
+            switch model.select{
+            case .listen:
+                ContentView()
+            case .musiclibrary:
+                VStack{
+                    Text("1")
+                    Spacer()
+                    TabbarView(arshow: $arshow)
+                }
+            case .message:
+                NotView()
+            case .profile:
+                ProfileView()
             }
-        case .message:
-            NotView()
-        case .profile:
-            ProfileView()
+        }else{
+            Signpage()
         }
+        
     }
 }
 

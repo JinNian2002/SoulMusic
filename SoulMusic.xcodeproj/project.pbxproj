@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B58646E24637F9C0E678532 /* Pods_SoulMusic_SoulMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */; };
+		47FC5235C4B29C888FD155FF /* Pods_SoulMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */; };
 		570070BF28B390C700E1C71F /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 570070BE28B390C700E1C71F /* test.mp4 */; };
 		571A15D528B22F900044C99B /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D428B22F900044C99B /* FullScreenView.swift */; };
 		571A15D728B26BD40044C99B /* AriaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D628B26BD40044C99B /* AriaCard.swift */; };
@@ -47,9 +49,15 @@
 		578356E728ADE1CC008F34FB /* RemarkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E628ADE1CC008F34FB /* RemarkCard.swift */; };
 		578356E928AE4DBE008F34FB /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E828AE4DBE008F34FB /* SearchDetailView.swift */; };
 		57EE451C28AFE10E005F50A9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE451B28AFE10E005F50A9 /* CameraView.swift */; };
+		57F000FC28B4BC69000F62C0 /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F000FB28B4BC69000F62C0 /* Signin.swift */; };
+		57F000FE28B4BC7C000F62C0 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F000FD28B4BC7C000F62C0 /* Signup.swift */; };
+		57F0010028B4C2F1000F62C0 /* Signpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F000FF28B4C2F1000F62C0 /* Signpage.swift */; };
+		57F0010228B4D3A2000F62C0 /* Signup2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0010128B4D3A2000F62C0 /* Signup2.swift */; };
+		57F0010428B4D564000F62C0 /* Signup3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F0010328B4D564000F62C0 /* Signup3.swift */; };
 		57F76C8728B14F4600368CE7 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F76C8628B14F4600368CE7 /* ShareView.swift */; };
 		57F76C8928B161A800368CE7 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F76C8828B161A800368CE7 /* MoreView.swift */; };
 		57FE773C28B0C2BA007A0C6A /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57FE773B28B0C2BA007A0C6A /* MobileNetV2.mlmodel */; };
+		ACA0DC11FBCB1F335E23CC57 /* Pods_SoulMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D632C5867B5BF54C4132E1D /* Pods_SoulMusicTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +78,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1177743D1F5AF6145ABD0F92 /* Pods-SoulMusic-SoulMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic_SoulMusicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		570070BE28B390C700E1C71F /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		571A15D428B22F900044C99B /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		571A15D628B26BD40044C99B /* AriaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaCard.swift; sourceTree = "<group>"; };
@@ -113,9 +124,20 @@
 		578356E628ADE1CC008F34FB /* RemarkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCard.swift; sourceTree = "<group>"; };
 		578356E828AE4DBE008F34FB /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
 		57EE451B28AFE10E005F50A9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		57F000FB28B4BC69000F62C0 /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
+		57F000FD28B4BC7C000F62C0 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		57F000FF28B4C2F1000F62C0 /* Signpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signpage.swift; sourceTree = "<group>"; };
+		57F0010128B4D3A2000F62C0 /* Signup2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup2.swift; sourceTree = "<group>"; };
+		57F0010328B4D564000F62C0 /* Signup3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup3.swift; sourceTree = "<group>"; };
 		57F76C8628B14F4600368CE7 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		57F76C8828B161A800368CE7 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		57FE773B28B0C2BA007A0C6A /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		7D632C5867B5BF54C4132E1D /* Pods_SoulMusicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85993B45A51967348DD6B927 /* Pods-SoulMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusic.release.xcconfig"; path = "Target Support Files/Pods-SoulMusic/Pods-SoulMusic.release.xcconfig"; sourceTree = "<group>"; };
+		8831628FB77C6F8523AD4E83 /* Pods-SoulMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusic.debug.xcconfig"; path = "Target Support Files/Pods-SoulMusic/Pods-SoulMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		BF94F643E0867B273CBC6E9D /* Pods-SoulMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusicTests.release.xcconfig"; path = "Target Support Files/Pods-SoulMusicTests/Pods-SoulMusicTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8E3CC91C97D11BD93857112 /* Pods-SoulMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusicTests.debug.xcconfig"; path = "Target Support Files/Pods-SoulMusicTests/Pods-SoulMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9C4BCE3C989B885554CD9BC /* Pods-SoulMusic-SoulMusicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusic-SoulMusicUITests.release.xcconfig"; path = "Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FC5235C4B29C888FD155FF /* Pods_SoulMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA0DC11FBCB1F335E23CC57 /* Pods_SoulMusicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +161,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B58646E24637F9C0E678532 /* Pods_SoulMusic_SoulMusicUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32A6975DE84ED1D7AEB7BF0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */,
+				1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */,
+				7D632C5867B5BF54C4132E1D /* Pods_SoulMusicTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5743682D28B36BD100BD9AAC /* videos */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +193,8 @@
 				577B35CC28AA04B5007DDC91 /* SoulMusicTests */,
 				577B35D628AA04B5007DDC91 /* SoulMusicUITests */,
 				577B35B528AA04B3007DDC91 /* Products */,
+				BC3B4B8BA7AA485B57D86FEC /* Pods */,
+				32A6975DE84ED1D7AEB7BF0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +213,7 @@
 			children = (
 				57FE773B28B0C2BA007A0C6A /* MobileNetV2.mlmodel */,
 				577B35B728AA04B3007DDC91 /* SoulMusicApp.swift */,
+				57F000FA28B4BC48000F62C0 /* Sign */,
 				577B35E628AA0C4F007DDC91 /* Home */,
 				577B35E728AA0C88007DDC91 /* Listen */,
 				577B35E828AA0CA6007DDC91 /* Musiclibrary */,
@@ -307,6 +345,31 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		57F000FA28B4BC48000F62C0 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				57F000FB28B4BC69000F62C0 /* Signin.swift */,
+				57F000FD28B4BC7C000F62C0 /* Signup.swift */,
+				57F0010128B4D3A2000F62C0 /* Signup2.swift */,
+				57F0010328B4D564000F62C0 /* Signup3.swift */,
+				57F000FF28B4C2F1000F62C0 /* Signpage.swift */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		BC3B4B8BA7AA485B57D86FEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8831628FB77C6F8523AD4E83 /* Pods-SoulMusic.debug.xcconfig */,
+				85993B45A51967348DD6B927 /* Pods-SoulMusic.release.xcconfig */,
+				1177743D1F5AF6145ABD0F92 /* Pods-SoulMusic-SoulMusicUITests.debug.xcconfig */,
+				D9C4BCE3C989B885554CD9BC /* Pods-SoulMusic-SoulMusicUITests.release.xcconfig */,
+				C8E3CC91C97D11BD93857112 /* Pods-SoulMusicTests.debug.xcconfig */,
+				BF94F643E0867B273CBC6E9D /* Pods-SoulMusicTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,9 +377,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577B35DD28AA04B5007DDC91 /* Build configuration list for PBXNativeTarget "SoulMusic" */;
 			buildPhases = (
+				F90170EB61F6FA0E59145378 /* [CP] Check Pods Manifest.lock */,
 				577B35B028AA04B3007DDC91 /* Sources */,
 				577B35B128AA04B3007DDC91 /* Frameworks */,
 				577B35B228AA04B3007DDC91 /* Resources */,
+				C381108698E58FE161F9BA08 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,6 +396,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577B35E028AA04B5007DDC91 /* Build configuration list for PBXNativeTarget "SoulMusicTests" */;
 			buildPhases = (
+				DA5D62447BBE2C0F2D60E428 /* [CP] Check Pods Manifest.lock */,
 				577B35C528AA04B5007DDC91 /* Sources */,
 				577B35C628AA04B5007DDC91 /* Frameworks */,
 				577B35C728AA04B5007DDC91 /* Resources */,
@@ -349,9 +415,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 577B35E328AA04B5007DDC91 /* Build configuration list for PBXNativeTarget "SoulMusicUITests" */;
 			buildPhases = (
+				EF5EA33E50E54DB86BB98FF3 /* [CP] Check Pods Manifest.lock */,
 				577B35CF28AA04B5007DDC91 /* Sources */,
 				577B35D028AA04B5007DDC91 /* Frameworks */,
 				577B35D128AA04B5007DDC91 /* Resources */,
+				9FF22C79C5FA8F2065FDF0B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,6 +501,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9FF22C79C5FA8F2065FDF0B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C381108698E58FE161F9BA08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulMusic/Pods-SoulMusic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulMusic/Pods-SoulMusic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoulMusic/Pods-SoulMusic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5D62447BBE2C0F2D60E428 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoulMusicTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF5EA33E50E54DB86BB98FF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoulMusic-SoulMusicUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F90170EB61F6FA0E59145378 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoulMusic-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		577B35B028AA04B3007DDC91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -445,6 +616,7 @@
 				577B35C128AA04B5007DDC91 /* Persistence.swift in Sources */,
 				577B35BA28AA04B3007DDC91 /* ContentView.swift in Sources */,
 				577B35C428AA04B5007DDC91 /* SoulMusic.xcdatamodeld in Sources */,
+				57F000FC28B4BC69000F62C0 /* Signin.swift in Sources */,
 				577B360B28AA9A76007DDC91 /* FocusView.swift in Sources */,
 				577B35FB28AA6D6C007DDC91 /* FunctionView.swift in Sources */,
 				577B35FF28AA70A4007DDC91 /* Extension.swift in Sources */,
@@ -462,12 +634,16 @@
 				5743682C28B36B4200BD9AAC /* ARcommunityView.swift in Sources */,
 				577B360528AA8009007DDC91 /* CardBar.swift in Sources */,
 				5756136928AB9A63002F6F1C /* NavView.swift in Sources */,
+				57F000FE28B4BC7C000F62C0 /* Signup.swift in Sources */,
 				577B360328AA7FEF007DDC91 /* CardName.swift in Sources */,
+				57F0010428B4D564000F62C0 /* Signup3.swift in Sources */,
 				5756136328AB8241002F6F1C /* MainView.swift in Sources */,
 				571A15DB28B276190044C99B /* PeopleProfileView.swift in Sources */,
 				577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */,
 				577B360128AA7EF5007DDC91 /* PicCard.swift in Sources */,
+				57F0010028B4C2F1000F62C0 /* Signpage.swift in Sources */,
 				571A15D528B22F900044C99B /* FullScreenView.swift in Sources */,
+				57F0010228B4D3A2000F62C0 /* Signup2.swift in Sources */,
 				57EE451C28AFE10E005F50A9 /* CameraView.swift in Sources */,
 				577B35F928AA5112007DDC91 /* TabtitleView.swift in Sources */,
 				5756136128AAC346002F6F1C /* ProfileView.swift in Sources */,
@@ -627,6 +803,7 @@
 		};
 		577B35DE28AA04B5007DDC91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8831628FB77C6F8523AD4E83 /* Pods-SoulMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -650,7 +827,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SoulMusicTeam.SoulMusic;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.SmartCameraLBTA";
 				PRODUCT_NAME = SoulMusic;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -661,6 +838,7 @@
 		};
 		577B35DF28AA04B5007DDC91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85993B45A51967348DD6B927 /* Pods-SoulMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -684,7 +862,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SoulMusicTeam.SoulMusic;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.SmartCameraLBTA";
 				PRODUCT_NAME = SoulMusic;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -695,6 +873,7 @@
 		};
 		577B35E128AA04B5007DDC91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8E3CC91C97D11BD93857112 /* Pods-SoulMusicTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -717,6 +896,7 @@
 		};
 		577B35E228AA04B5007DDC91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF94F643E0867B273CBC6E9D /* Pods-SoulMusicTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -739,6 +919,7 @@
 		};
 		577B35E428AA04B5007DDC91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1177743D1F5AF6145ABD0F92 /* Pods-SoulMusic-SoulMusicUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -757,6 +938,7 @@
 		};
 		577B35E528AA04B5007DDC91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C4BCE3C989B885554CD9BC /* Pods-SoulMusic-SoulMusicUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
