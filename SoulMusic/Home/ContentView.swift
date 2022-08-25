@@ -36,6 +36,7 @@ struct ContentView: View {
     @State var textfeild3 = ""
     @State var peopleprofilemoreshow = false
     @State var arshow = false
+    @State var armakeshow = false
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
@@ -98,13 +99,13 @@ struct ContentView: View {
                 //Menu
                 VStack{
                     HStack{
-                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
-                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, armakeshow: $armakeshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, armakeshow: $armakeshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
                     }
                     .hidden()
                     HStack{
-                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
-                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, armakeshow: $armakeshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
+                        MenuView(ontap: $ontap, publishshow: $publishshow, texteditor: $texteditor, screenbutton: $screenbutton, musicshow: $musicshow, albumname: $albumname, noteshow: $noteshow, armakeshow: $armakeshow, aria1: $aria1, aria2: $aria2, aria3: $aria3, textfeild1: $textfeild1, textfeild2: $textfeild2, textfeild3: $textfeild3)
                             .hidden()
                     }
                 }

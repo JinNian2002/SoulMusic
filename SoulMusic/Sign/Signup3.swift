@@ -72,7 +72,6 @@ struct Signup3: View {
                             .font(.system(size: 24))
                             .frame(width: UIScreen.main.bounds.width / 4)
                     }
-                    .foregroundColor(.black)
                 }
                 .padding(.horizontal, 24)
                 Spacer()

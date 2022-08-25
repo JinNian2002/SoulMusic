@@ -12,7 +12,7 @@ import AVFoundation
 struct ARcommunityView: View {
     @Binding var arshow : Bool
     var body: some View {
-            return ARViewContainer().edgesIgnoringSafeArea(.all)
+            return ARContainer().edgesIgnoringSafeArea(.all)
             .overlay(
                 VStack{
                     FullScreenView(publishshow: $arshow, fullScreentitle: "AR社区", screenbutton: "      ")
@@ -69,7 +69,7 @@ struct ARcommunityView: View {
         
 }
 
-struct ARViewContainer: UIViewRepresentable {
+struct ARContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         // 在墙上放一个电视 可以播放视频
@@ -87,7 +87,7 @@ struct ARViewContainer: UIViewRepresentable {
         housingenity.addChild(screenentity) //组装
         screenentity.setPosition([0,dimensions.y/2+0.01,0], relativeTo: housingenity)
         //在arrive中添加锚点
-        let anchor = AnchorEntity()
+        let anchor = AnchorEntity(plane: .vertical)
         anchor.addChild(housingenity)
         arView.scene.addAnchor(anchor)
         //让电视支持手势操作

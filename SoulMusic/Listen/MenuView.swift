@@ -16,6 +16,7 @@ struct MenuView: View {
     @Binding var musicshow : Bool
     @Binding var albumname : String
     @Binding var noteshow : Bool
+    @Binding var armakeshow : Bool
     @Binding var aria1 : Bool
     @Binding var aria2 : Bool
     @Binding var aria3 : Bool
@@ -113,6 +114,10 @@ struct MenuView: View {
                 .padding(.vertical, 8)
                 .onTapGesture {
                     ontap = false
+                    armakeshow = true
+                }
+                .fullScreenCover(isPresented: $armakeshow) {
+                    ARmakerView(armakeshow: $armakeshow)
                 }
             Label("便携记录", image: currentMode == .dark ? "edit_dm" :"edit")
                 .font(.system(size: 14))
