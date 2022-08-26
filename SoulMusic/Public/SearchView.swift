@@ -93,5 +93,6 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

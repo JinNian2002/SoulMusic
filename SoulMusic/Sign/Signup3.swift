@@ -34,7 +34,7 @@ struct Signup3: View {
     
     var body: some View {
         if success{
-            Signin()
+            Signin().environmentObject(ClientData(FromOutMyClient: initMyClientData()))
         }else{
             VStack(spacing: 48){
                 HStack{

@@ -43,5 +43,6 @@ struct RemarkCard_Previews: PreviewProvider {
     static var previews: some View {
         RemarkCard()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

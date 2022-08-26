@@ -68,5 +68,6 @@ struct FocusView_Previews: PreviewProvider {
     static var previews: some View {
         FocusView(shareshow: .constant(false), moreshow: .constant(false), peopleprofilemoreshow: .constant(false))
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

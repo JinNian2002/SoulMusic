@@ -33,5 +33,6 @@ struct FullScreenView: View {
 struct FullScreenView_Previews: PreviewProvider {
     static var previews: some View {
         FullScreenView(publishshow: .constant(false))
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

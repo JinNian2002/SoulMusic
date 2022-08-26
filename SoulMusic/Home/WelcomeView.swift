@@ -34,5 +34,6 @@ struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

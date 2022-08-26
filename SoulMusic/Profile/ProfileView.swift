@@ -11,6 +11,7 @@ struct ProfileView: View {
     @Environment(\.colorScheme) var currentMode
     @State var profilemoreshow = false
     @State var arshow = false
+    @EnvironmentObject var MyClientdata : ClientData
     var body: some View {
         NavigationView{
             ZStack{
@@ -26,10 +27,10 @@ struct ProfileView: View {
                     }
                     HStack{
                         HStack(spacing: 24){
-                            Image("profilepic4")
+                            Image(uiImage: UIImage(data: MyClientdata.MyClient.clientimage)!)
                                 .circleImage(width: 72, height: 72)
                             VStack(alignment: .leading, spacing: 10){
-                                Text("瑾年")
+                                Text(MyClientdata.MyClient.username)
                                     .font(.system(size: 18, weight: .black))
                                     .foregroundColor(Color("OnSurface"))
                                 HStack(spacing: 7){
@@ -61,14 +62,19 @@ struct ProfileView: View {
                             }
                         }
                         Spacer()
-                        HStack(spacing: 0){
-                            Text("编辑资料")
-                                .font(.system(size: 14))
-                                .foregroundColor(Color("OnSurface"))
-                            Image(currentMode == .dark ? "chevron_24_front_dm": "chevron_24_front")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 16)
+                        NavigationLink{
+                            ProfileDetailView(array2: [MyClientdata.MyClient.username,MyClientdata.MyClient.email, MyClientdata.MyClient.sex,MyClientdata.MyClient.constellation,MyClientdata.MyClient.age,MyClientdata.MyClient.location,MyClientdata.MyClient.job,MyClientdata.MyClient.introduction], clientimage: MyClientdata.MyClient.clientimage)
+                                .navigationBarHidden(true)
+                        }label: {
+                            HStack(spacing: 0){
+                                Text("编辑资料")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color("OnSurface"))
+                                Image(currentMode == .dark ? "chevron_24_front_dm": "chevron_24_front")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 16)
+                            }
                         }
                     }
                     .padding(12)
@@ -143,5 +149,6 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

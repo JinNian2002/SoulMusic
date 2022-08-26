@@ -12,6 +12,7 @@ struct SettingView: View {
     @Environment(\.dismiss) var dismiss
     @State var DragValues : CGFloat = 0
     @State var logoutshow : Bool = false
+    @AppStorage("islogin") var islogin = false
     var body: some View {
             VStack(spacing: 0){
                 NavView(isshowfront: false, Navtitle: "设置")
@@ -41,7 +42,9 @@ struct SettingView: View {
                                 .confirmationDialog("", isPresented: $logoutshow) {
                                     VStack{
                                         Button{
-                                            
+                                            withAnimation {
+                                                islogin = false
+                                            }
                                         }label: {
                                             Text("退出登录")
                                         }
@@ -90,5 +93,6 @@ func SettingCard(icon: String, text: String, chevron: String) -> some View{
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView(logoutshow: false)
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

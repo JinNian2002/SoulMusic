@@ -12,11 +12,26 @@ struct Signin: View {
     @State var password = ""
     @AppStorage("islogin") var islogin = false
     @State var correct = false
+    @EnvironmentObject var MyClientdata : ClientData
     func SignIn(username: String, password: String) -> Bool{
         PFUser.logInWithUsername(inBackground: username, password: password) { user, error in
             if(user != nil){
                 withAnimation {
+                    print("登录成功！")
+                    let username = user!["username"] as! String
+                    let email = user!["email"] as! String
+                    let sex = user!["sex"] as! String
+                    let constellation = user!["constellation"] as! String
+                    let age = user!["age"] as! String
+                    let location = user!["location"] as! String
+                    let job = user!["job"] as! String
+                    let introduction = user!["introduction"] as! String
+                    let clientimage = user!["clientimage"] as! PFFileObject
+                    let clientimagedata = try! clientimage.getData()
+                    MyClientdata.MyClient = Client(username: username, email: email, sex: sex, constellation: constellation, age: age, location: location, job: job, introduction: introduction, clientimage: clientimagedata)
+                    MyClientdata.datastore()
                     islogin = true
+                    print(MyClientdata.MyClient)
                 }
             }
         }
@@ -97,6 +112,7 @@ struct Signin: View {
                 .padding(.vertical, 12)
                 .background(Color("Primary"),in: RoundedRectangle(cornerRadius: 50))
                 .foregroundColor(.white)
+                .opacity(correct ? 1 : 0.5)
                 .onTapGesture {
                     islogin = SignIn(username: username, password: password)
                 }
@@ -105,7 +121,7 @@ struct Signin: View {
         }
         .background(Color("Background"))
 //        .alert(isPresented: $islogin) {
-//            Alert(title: Text("登录成功！"), message: Text(""), primaryButton: Alert.Button.cancel(Text("取消"), action: {
+//            Alert(title: Text("用户名或密码错误"), message: Text(""), primaryButton: Alert.Button.cancel(Text("取消"), action: {
 //                islogin = false
 //            }), secondaryButton: Alert.Button.default(Text("确定"), action: {
 //                islogin = false
@@ -117,5 +133,6 @@ struct Signin: View {
 struct Signin_Previews: PreviewProvider {
     static var previews: some View {
         Signin()
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

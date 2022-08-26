@@ -52,5 +52,6 @@ struct MoreView: View {
 struct MoreView_Previews: PreviewProvider {
     static var previews: some View {
         MoreView(moreshow: .constant(false))
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

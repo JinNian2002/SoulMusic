@@ -12,6 +12,7 @@ struct FunctionView: View {
         HStack(alignment: .center){
             NavigationLink{
                 CameraView()
+                    .environmentObject(CameraModel())
                     .navigationBarHidden(true)
             }label: {
                 VStack{
@@ -100,5 +101,6 @@ struct FunctionView: View {
 struct FunctionView_Previews: PreviewProvider {
     static var previews: some View {
         FunctionView()
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

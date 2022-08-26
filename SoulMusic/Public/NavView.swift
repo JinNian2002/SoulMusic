@@ -33,5 +33,6 @@ struct NavView: View {
 struct NavView_Previews: PreviewProvider {
     static var previews: some View {
         NavView()
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

@@ -93,5 +93,6 @@ struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
         TabbarView(arshow: .constant(false))
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

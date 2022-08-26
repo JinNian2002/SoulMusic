@@ -30,7 +30,7 @@ struct Signpage: View {
                     Spacer()
                     VStack(spacing: 24){
                         NavigationLink{
-                            Signin()
+                            Signin().environmentObject(ClientData(FromOutMyClient: initMyClientData()))
                                 .navigationBarHidden(true)
                         }label: {
                             HStack{
@@ -74,5 +74,6 @@ struct Signpage_Previews: PreviewProvider {
     static var previews: some View {
         Signpage()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

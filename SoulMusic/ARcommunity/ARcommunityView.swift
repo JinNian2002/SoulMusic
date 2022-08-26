@@ -132,5 +132,6 @@ extension ARView{
 struct ARcommunityView_Previews: PreviewProvider {
     static var previews: some View {
         ARcommunityView(arshow: .constant(false))
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

@@ -15,8 +15,6 @@ struct Signup: View {
     @State var password = ""
     @State var email = ""
     
-    
-    
     var body: some View {
         VStack(spacing: 48){
             HStack{
@@ -59,5 +57,6 @@ struct Signup_Previews: PreviewProvider {
     static var previews: some View {
         Signup()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

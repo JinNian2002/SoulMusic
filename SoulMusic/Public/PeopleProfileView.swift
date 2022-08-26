@@ -90,5 +90,6 @@ struct PeopleProfileView: View {
 struct PeopleProfileView_Previews: PreviewProvider {
     static var previews: some View {
         PeopleProfileView(peopleprofilemoreshow: .constant(false))
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

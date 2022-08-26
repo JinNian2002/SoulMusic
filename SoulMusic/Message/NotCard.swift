@@ -41,5 +41,6 @@ struct NotCard: View {
 struct NotCard_Previews: PreviewProvider {
     static var previews: some View {
         NotCard()
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

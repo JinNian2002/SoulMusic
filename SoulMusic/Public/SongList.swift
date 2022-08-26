@@ -43,5 +43,6 @@ struct SongList: View {
 struct SongList_Previews: PreviewProvider {
     static var previews: some View {
         SongList(profilemoreshow: .constant(false))
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

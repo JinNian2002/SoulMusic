@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3B58646E24637F9C0E678532 /* Pods_SoulMusic_SoulMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */; };
 		47FC5235C4B29C888FD155FF /* Pods_SoulMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */; };
-		570070BF28B390C700E1C71F /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 570070BE28B390C700E1C71F /* test.mp4 */; };
 		571A15D528B22F900044C99B /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D428B22F900044C99B /* FullScreenView.swift */; };
 		571A15D728B26BD40044C99B /* AriaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D628B26BD40044C99B /* AriaCard.swift */; };
 		571A15D928B2719C0044C99B /* ProfileMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D828B2719C0044C99B /* ProfileMoreView.swift */; };
@@ -48,6 +47,8 @@
 		577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B361028AA9E4E007DDC91 /* WelcomeView.swift */; };
 		578356E728ADE1CC008F34FB /* RemarkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E628ADE1CC008F34FB /* RemarkCard.swift */; };
 		578356E928AE4DBE008F34FB /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578356E828AE4DBE008F34FB /* SearchDetailView.swift */; };
+		578D293A28B8FC960041F33B /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578D293928B8FC960041F33B /* ProfileDetailView.swift */; };
+		578D293C28B904AE0041F33B /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578D293B28B904AE0041F33B /* ClientData.swift */; };
 		57E1071828B7581B003D8527 /* SmartHitTest in Frameworks */ = {isa = PBXBuildFile; productRef = 57E1071728B7581B003D8527 /* SmartHitTest */; };
 		57E1071A28B7583F003D8527 /* models in Resources */ = {isa = PBXBuildFile; fileRef = 57E1071928B7583F003D8527 /* models */; };
 		57EAD46128B763CC006587B7 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 57EAD46028B763CC006587B7 /* FocusEntity */; };
@@ -56,6 +57,7 @@
 		57EAD46928B7784C006587B7 /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57EAD46628B7784B006587B7 /* fender_stratocaster.usdz */; };
 		57EAD46A28B7784C006587B7 /* toy_drummer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57EAD46728B7784B006587B7 /* toy_drummer.usdz */; };
 		57EAD46B28B7784C006587B7 /* gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 57EAD46828B7784C006587B7 /* gramophone.usdz */; };
+		57EAD46E28B798FD006587B7 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 57EAD46D28B798FD006587B7 /* test.mp4 */; };
 		57EE451C28AFE10E005F50A9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE451B28AFE10E005F50A9 /* CameraView.swift */; };
 		57F000FC28B4BC69000F62C0 /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F000FB28B4BC69000F62C0 /* Signin.swift */; };
 		57F000FE28B4BC7C000F62C0 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F000FD28B4BC7C000F62C0 /* Signup.swift */; };
@@ -89,7 +91,6 @@
 		1177743D1F5AF6145ABD0F92 /* Pods-SoulMusic-SoulMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic_SoulMusicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		570070BE28B390C700E1C71F /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		571A15D428B22F900044C99B /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		571A15D628B26BD40044C99B /* AriaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaCard.swift; sourceTree = "<group>"; };
 		571A15D828B2719C0044C99B /* ProfileMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMoreView.swift; sourceTree = "<group>"; };
@@ -131,12 +132,15 @@
 		577B361028AA9E4E007DDC91 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		578356E628ADE1CC008F34FB /* RemarkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkCard.swift; sourceTree = "<group>"; };
 		578356E828AE4DBE008F34FB /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
+		578D293928B8FC960041F33B /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
+		578D293B28B904AE0041F33B /* ClientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
 		57E1071928B7583F003D8527 /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = models; sourceTree = "<group>"; };
 		57EAD46228B775F3006587B7 /* ARmakerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARmakerView.swift; sourceTree = "<group>"; };
 		57EAD46428B7761E006587B7 /* modelmanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = modelmanger.swift; sourceTree = "<group>"; };
 		57EAD46628B7784B006587B7 /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
 		57EAD46728B7784B006587B7 /* toy_drummer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_drummer.usdz; sourceTree = "<group>"; };
 		57EAD46828B7784C006587B7 /* gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gramophone.usdz; sourceTree = "<group>"; };
+		57EAD46D28B798FD006587B7 /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		57EE451B28AFE10E005F50A9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		57F000FB28B4BC69000F62C0 /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
 		57F000FD28B4BC7C000F62C0 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
@@ -197,7 +201,7 @@
 		5743682D28B36BD100BD9AAC /* videos */ = {
 			isa = PBXGroup;
 			children = (
-				570070BE28B390C700E1C71F /* test.mp4 */,
+				57EAD46D28B798FD006587B7 /* test.mp4 */,
 			);
 			path = videos;
 			sourceTree = "<group>";
@@ -329,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				5756136028AAC346002F6F1C /* ProfileView.swift */,
+				578D293928B8FC960041F33B /* ProfileDetailView.swift */,
 				5756136628AB97AE002F6F1C /* SettingView.swift */,
 				571A15D828B2719C0044C99B /* ProfileMoreView.swift */,
 			);
@@ -361,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				577B35F228AA432C007DDC91 /* Data.swift */,
+				578D293B28B904AE0041F33B /* ClientData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -519,7 +525,7 @@
 			files = (
 				577B35BF28AA04B5007DDC91 /* Preview Assets.xcassets in Resources */,
 				57EAD46928B7784C006587B7 /* fender_stratocaster.usdz in Resources */,
-				570070BF28B390C700E1C71F /* test.mp4 in Resources */,
+				57EAD46E28B798FD006587B7 /* test.mp4 in Resources */,
 				57E1071A28B7583F003D8527 /* models in Resources */,
 				577B35BC28AA04B5007DDC91 /* Assets.xcassets in Resources */,
 				57EAD46B28B7784C006587B7 /* gramophone.usdz in Resources */,
@@ -671,6 +677,7 @@
 				571A15D928B2719C0044C99B /* ProfileMoreView.swift in Sources */,
 				57FE773C28B0C2BA007A0C6A /* MobileNetV2.mlmodel in Sources */,
 				57EAD46528B7761E006587B7 /* modelmanger.swift in Sources */,
+				578D293C28B904AE0041F33B /* ClientData.swift in Sources */,
 				577B35F128AA38A3007DDC91 /* SearchView.swift in Sources */,
 				571A15E128B285700044C99B /* NotSearchView.swift in Sources */,
 				57F76C8928B161A800368CE7 /* MoreView.swift in Sources */,
@@ -683,6 +690,7 @@
 				57F0010428B4D564000F62C0 /* Signup3.swift in Sources */,
 				5756136328AB8241002F6F1C /* MainView.swift in Sources */,
 				571A15DB28B276190044C99B /* PeopleProfileView.swift in Sources */,
+				578D293A28B8FC960041F33B /* ProfileDetailView.swift in Sources */,
 				577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */,
 				577B360128AA7EF5007DDC91 /* PicCard.swift in Sources */,
 				57F0010028B4C2F1000F62C0 /* Signpage.swift in Sources */,

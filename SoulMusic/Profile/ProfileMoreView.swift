@@ -117,5 +117,6 @@ struct ProfileMoreView: View {
 struct ProfileMoreView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileMoreView(profilemoreshow: .constant(false))
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

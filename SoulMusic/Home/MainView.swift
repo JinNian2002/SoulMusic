@@ -11,6 +11,7 @@ struct MainView: View {
     @EnvironmentObject var model : Model
     @State  var arshow = false
     @AppStorage("islogin") var islogin = false
+    @EnvironmentObject var MyClientdata : ClientData
     var body: some View {
         if islogin{
             switch model.select{
@@ -25,7 +26,7 @@ struct MainView: View {
             case .message:
                 NotView()
             case .profile:
-                ProfileView()
+                ProfileView().environmentObject(ClientData(FromOutMyClient: initMyClientData()))
             }
         }else{
             Signpage()
@@ -38,5 +39,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

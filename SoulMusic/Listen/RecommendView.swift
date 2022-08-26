@@ -36,5 +36,6 @@ struct RecommendView_Previews: PreviewProvider {
     static var previews: some View {
         RecommendView(shareshow: .constant(false), moreshow: .constant(false), peopleprofilemoreshow: .constant(false))
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

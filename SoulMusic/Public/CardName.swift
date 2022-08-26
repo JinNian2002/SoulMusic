@@ -45,5 +45,6 @@ struct CardName: View {
 struct CardName_Previews: PreviewProvider {
     static var previews: some View {
         CardName(moreshow: .constant(false), peopleprofilemoreshow: .constant(false))
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

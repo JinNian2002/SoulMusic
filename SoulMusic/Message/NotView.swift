@@ -136,5 +136,6 @@ struct NotView_Previews: PreviewProvider {
     static var previews: some View {
         NotView()
             .environmentObject(Model())
+            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }
