@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B58646E24637F9C0E678532 /* Pods_SoulMusic_SoulMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */; };
+		3D013E1628B9EB3800B03AFD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E1528B9EB3800B03AFD /* ImagePicker.swift */; };
 		47FC5235C4B29C888FD155FF /* Pods_SoulMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */; };
 		571A15D528B22F900044C99B /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D428B22F900044C99B /* FullScreenView.swift */; };
 		571A15D728B26BD40044C99B /* AriaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D628B26BD40044C99B /* AriaCard.swift */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		1177743D1F5AF6145ABD0F92 /* Pods-SoulMusic-SoulMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic_SoulMusicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D013E1528B9EB3800B03AFD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		571A15D428B22F900044C99B /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		571A15D628B26BD40044C99B /* AriaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaCard.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				571A15DA28B276190044C99B /* PeopleProfileView.swift */,
 				57F76C8828B161A800368CE7 /* MoreView.swift */,
 				577B35EE28AA0DEE007DDC91 /* TabbarView.swift */,
+				3D013E1528B9EB3800B03AFD /* ImagePicker.swift */,
 				5756136828AB9A63002F6F1C /* NavView.swift */,
 				571A15D428B22F900044C99B /* FullScreenView.swift */,
 				5756136428AB9359002F6F1C /* SongList.swift */,
@@ -658,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5745159028ABE07B00CA0DDA /* MenuView.swift in Sources */,
+				3D013E1628B9EB3800B03AFD /* ImagePicker.swift in Sources */,
 				571A15D728B26BD40044C99B /* AriaCard.swift in Sources */,
 				577B35F328AA432C007DDC91 /* Data.swift in Sources */,
 				571A15E328B290560044C99B /* NotCard.swift in Sources */,

@@ -11,7 +11,9 @@ import Parse
 struct ProfileDetailView: View {
     @State var array1 : [String] = ["用户名","邮箱", "性别","星座","年龄","地区","职业","简介"]
     @State var array2 : [String] = ["瑾年","1316755935@qq.com", "男","天蝎座","20","成都","学生","你好，我叫瑾年。"]
-    @State var clientimage = Data()
+    @Binding var clientimage : Data
+    @State var showimagepicker = false
+    @State var imagedata = Data()
     @Environment(\.colorScheme) var currentMode
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var MyClientdata : ClientData
@@ -40,6 +42,7 @@ struct ProfileDetailView: View {
                         MyClientdata.ServerSave(ChangeName: "constellation", ChangeContent: MyClientdata.MyClient.constellation)
                         MyClientdata.ServerSave(ChangeName: "location", ChangeContent: MyClientdata.MyClient.location)
                         MyClientdata.ServerSave(ChangeName: "introduction", ChangeContent: MyClientdata.MyClient.introduction)
+                        MyClientdata.ServerSaveImage(ChangeName: "clientimage", ChangeContent: imagedata)
                         //存入本地
                         MyClientdata.MyClient.username = array2[0]
                         MyClientdata.MyClient.email = array2[1]
@@ -60,13 +63,17 @@ struct ProfileDetailView: View {
                     Image(uiImage: UIImage(data: clientimage)!)
                         .circleImage(width: 100, height: 100)
                         .overlay(
-                            HStack{
-                                Image("camera")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 18)
+                            Button{
+                                showimagepicker = true
+                            }label: {
+                                HStack{
+                                    Image("camera")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 18)
+                                }
+                                .circleIcon(width: 30, height: 30)
                             }
-                            .circleIcon(width: 30, height: 30)
                             .opacity(0.8)
                             .offset(x: 35, y: 35)
                         )
@@ -94,12 +101,13 @@ struct ProfileDetailView: View {
                 
             }
         }
-    }
-}
-
-struct ProfileDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileDetailView()
-            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
+        .sheet(isPresented: $showimagepicker, onDismiss: {
+            if(!imagedata.isEmpty){
+                MyClientdata.MyClient.clientimage = imagedata
+                MyClientdata.datastore()
+            }
+        }, content: {
+            Imagepicker(ispicker: $showimagepicker, imagedata: $imagedata)
+        })
     }
 }

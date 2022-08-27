@@ -24,13 +24,16 @@ func initMyClientData() -> Client{
 class ClientData : ObservableObject{
     @Published var MyClient : Client
     @Published var saveresult = false
+    
     init(FromOutMyClient : Client){
         self.MyClient = FromOutMyClient
     }
+    
     func datastore(){
         let datastore = try! encoder.encode(self.MyClient)
         UserDefaults.standard.set(datastore, forKey: "MyClient")
     }
+    
     func ServerSave(ChangeName: String, ChangeContent: String) {
         var query = PFUser.query()
         query?.whereKey("username", equalTo: self.MyClient.username)
@@ -39,6 +42,22 @@ class ClientData : ObservableObject{
                 print("错误！")
             }else if let user = user{
                 user[0][ChangeName] = ChangeContent
+                user[0].saveInBackground { success, error in
+                    self.saveresult = success
+                }
+            }
+        }
+    }
+    
+    func ServerSaveImage(ChangeName: String, ChangeContent: Data) {
+        var query = PFUser.query()
+        query?.whereKey("username", equalTo: self.MyClient.username)
+        query?.findObjectsInBackground{ user, error in
+            if(error != nil){
+                print("错误！")
+            }else if let user = user{
+                let imagefile = PFFileObject(name: "image.jpg", data: ChangeContent)!
+                user[0][ChangeName] = imagefile
                 user[0].saveInBackground { success, error in
                     self.saveresult = success
                 }

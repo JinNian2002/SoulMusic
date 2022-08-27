@@ -63,7 +63,7 @@ struct ProfileView: View {
                         }
                         Spacer()
                         NavigationLink{
-                            ProfileDetailView(array2: [MyClientdata.MyClient.username,MyClientdata.MyClient.email, MyClientdata.MyClient.sex,MyClientdata.MyClient.constellation,MyClientdata.MyClient.age,MyClientdata.MyClient.location,MyClientdata.MyClient.job,MyClientdata.MyClient.introduction], clientimage: MyClientdata.MyClient.clientimage)
+                            ProfileDetailView(array2: [MyClientdata.MyClient.username,MyClientdata.MyClient.email, MyClientdata.MyClient.sex,MyClientdata.MyClient.constellation,MyClientdata.MyClient.age,MyClientdata.MyClient.location,MyClientdata.MyClient.job,MyClientdata.MyClient.introduction], clientimage: $MyClientdata.MyClient.clientimage)
                                 .navigationBarHidden(true)
                         }label: {
                             HStack(spacing: 0){
