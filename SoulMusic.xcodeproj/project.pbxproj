@@ -233,7 +233,6 @@
 			children = (
 				57FE773B28B0C2BA007A0C6A /* MobileNetV2.mlmodel */,
 				577B35B728AA04B3007DDC91 /* SoulMusicApp.swift */,
-				57EAD46C28B7786B006587B7 /* models */,
 				57F000FA28B4BC48000F62C0 /* Sign */,
 				577B35E628AA0C4F007DDC91 /* Home */,
 				577B35E728AA0C88007DDC91 /* Listen */,
@@ -290,6 +289,7 @@
 		577B35E728AA0C88007DDC91 /* Listen */ = {
 			isa = PBXGroup;
 			children = (
+				57EAD46C28B7786B006587B7 /* models */,
 				57EAD46228B775F3006587B7 /* ARmakerView.swift */,
 				57EAD46428B7761E006587B7 /* modelmanger.swift */,
 				577B35F828AA5112007DDC91 /* TabtitleView.swift */,
