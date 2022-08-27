@@ -27,8 +27,8 @@ struct Signin: View {
                     let job = user!["job"] as! String
                     let introduction = user!["introduction"] as! String
                     let clientimage = user!["clientimage"] as! PFFileObject
-                    let clientimagedata = try! clientimage.getData()
-                    MyClientdata.MyClient = Client(username: username, email: email, sex: sex, constellation: constellation, age: age, location: location, job: job, introduction: introduction, clientimage: clientimagedata)
+                    let clientimagedata = user!["clientimage"] as! Data
+                    MyClientdata.MyClient = Client(username: username, email: email, sex: sex, constellation: constellation, age: age, location: location, job: job, introduction: introduction, clientimage: clientimage.url!)
                     MyClientdata.datastore()
                     islogin = true
                     print(MyClientdata.MyClient)

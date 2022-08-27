@@ -27,8 +27,12 @@ struct ProfileView: View {
                     }
                     HStack{
                         HStack(spacing: 24){
-                            Image(uiImage: UIImage(data: MyClientdata.MyClient.clientimage)!)
-                                .circleImage(width: 72, height: 72)
+                            MyAsyncImage(url: URL(string: MyClientdata.MyClient.clientimage)!) {
+                                ProgressView()
+                            } image: { UIImage in
+                                Image(uiImage: UIImage)
+                            }
+
                             VStack(alignment: .leading, spacing: 10){
                                 Text(MyClientdata.MyClient.username)
                                     .font(.system(size: 18, weight: .black))

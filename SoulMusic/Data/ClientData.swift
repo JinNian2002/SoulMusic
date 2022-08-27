@@ -13,7 +13,7 @@ var encoder = JSONEncoder()
 var decoder = JSONDecoder()
 
 func initMyClientData() -> Client{
-    var output : Client = Client(username: "", email: "", sex: "", constellation: "", age: "", location: "", job: "", introduction: "", clientimage: Data())
+    var output : Client = Client(username: "", email: "", sex: "", constellation: "", age: "", location: "", job: "", introduction: "", clientimage: "")
     if let datastore = UserDefaults.standard.object(forKey: "MyClient") as? Data{
         let data = try! decoder.decode(Client.self, from: datastore)
         output = data
@@ -76,5 +76,5 @@ struct Client : Identifiable, Decodable, Encodable{
     var location : String
     var job : String
     var introduction : String
-    var clientimage : Data
+    var clientimage : String
 }

@@ -11,7 +11,7 @@ import Parse
 struct ProfileDetailView: View {
     @State var array1 : [String] = ["用户名","邮箱", "性别","星座","年龄","地区","职业","简介"]
     @State var array2 : [String] = ["瑾年","1316755935@qq.com", "男","天蝎座","20","成都","学生","你好，我叫瑾年。"]
-    @Binding var clientimage : Data
+    @Binding var clientimage : String
     @State var showimagepicker = false
     @State var imagedata = Data()
     @Environment(\.colorScheme) var currentMode
@@ -60,8 +60,11 @@ struct ProfileDetailView: View {
             }
             ScrollView{
                 VStack(spacing: 0){
-                    Image(uiImage: UIImage(data: clientimage)!)
-                        .circleImage(width: 100, height: 100)
+                    MyAsyncImage(url: URL(string: MyClientdata.MyClient.clientimage)!) {
+                        ProgressView()
+                    } image: { UIImage in
+                        Image(uiImage: UIImage)
+                    }
                         .overlay(
                             Button{
                                 showimagepicker = true
@@ -103,7 +106,8 @@ struct ProfileDetailView: View {
         }
         .sheet(isPresented: $showimagepicker, onDismiss: {
             if(!imagedata.isEmpty){
-                MyClientdata.MyClient.clientimage = imagedata
+//                MyClientdata.MyClient.clientimage = imagedata
+                MyClientdata.ServerSaveImage(ChangeName: "clientimage", ChangeContent: imagedata)
                 MyClientdata.datastore()
             }
         }, content: {
