@@ -31,36 +31,55 @@ struct CameraView: View{
                 Spacer()
                 HStack{
                     Spacer()
-                    HStack{
-                        Image("info_dm")
-                    }
-                    .circleIcon(width: 50, height: 50)
-                    .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
-                    .onTapGesture {
-                        
+                    Button{
+                        Task{
+                            await Camera.ChangeCam()
+                            Camera.isback.toggle()
+                        }
+                    }label: {
+                        HStack{
+                            Image(systemName: "arrow.triangle.2.circlepath.camera")
+                                .foregroundColor(.white)
+                        }
+                        .circleIcon(width: 50, height: 50)
+                        .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
                     }
                     Spacer()
-                    HStack{
-                        Image("camera")
-                    }
-                    .circleIcon(width: 60, height: 60)
-                    .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
-                    .onTapGesture {
+                    Button{
                         Camera.takePic()
                         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                             classifyImage()
                         })
                         musiclistresult = true
-                    }
-                    Spacer()
-                    Button{
-                        Camera.OpenFlash()
                     }label: {
                         HStack{
-                            Image("flash")
+                            Image("camera")
                         }
-                        .circleIcon(width: 50, height: 50)
+                        .circleIcon(width: 60, height: 60)
                         .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
+                    }
+                    Spacer()
+                    if Camera.isback{
+                        Button{
+                            Camera.OpenFlash()
+                        }label: {
+                            HStack{
+                                Image("flash")
+                            }
+                            .circleIcon(width: 50, height: 50)
+                            .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
+                        }
+                    }else{
+                        Button{
+                            Camera.OpenFlash()
+                        }label: {
+                            HStack{
+                                Image("flash")
+                            }
+                            .circleIcon(width: 50, height: 50)
+                            .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
+                        }
+                        .hidden()
                     }
                     Spacer()
                 }
@@ -71,6 +90,9 @@ struct CameraView: View{
         .onAppear{
             Camera.Check()
             Camera.Restart()
+        }
+        .onDisappear{
+            Camera.ShutDown()
         }
         .fullScreenCover(isPresented: $musiclistresult) {
             VStack{
@@ -95,6 +117,7 @@ struct CameraView: View{
             }
         }
     }
+    //Core ML识别
     func classifyImage() {
         guard let image = UIImage(data: Camera.picData),
               let resizedImage = image.resizeImageTo(size:CGSize(width: 224, height: 224)),
@@ -107,7 +130,7 @@ struct CameraView: View{
         }
     }
 }
-
+//摄像头
 class CameraModel:NSObject,ObservableObject,AVCapturePhotoCaptureDelegate{
     @Published var session = AVCaptureSession()
     
@@ -210,7 +233,7 @@ class CameraModel:NSObject,ObservableObject,AVCapturePhotoCaptureDelegate{
                 self.device = device!
                 self.isback = false
             }else{
-                let device = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back)
+                let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
                 self.session.beginConfiguration()
                 self.session.removeInput(self.input)
                 let newinput = try AVCaptureDeviceInput(device: device!)

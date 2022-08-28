@@ -8,6 +8,7 @@ target 'SoulMusic' do
 
   # Pods for SoulMusic
 pod 'Parse' 
+pod 'YPImagePicker'
   target 'SoulMusicTests' do
     inherit! :search_paths
     # Pods for testing
