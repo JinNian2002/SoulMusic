@@ -69,7 +69,7 @@ struct FocusView: View {
                     .frame(height: 1)
                     .opacity(0)
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                             withAnimation {
                                 refreshable = false
                             }

@@ -14,6 +14,7 @@ struct NotView: View {
     @State var issearch : Bool = false
     @State var isselect : Int = 0
     @State var arshow = false
+    @State var refreshable = false
     @EnvironmentObject var notdatas : Model
     var tagwidth : CGFloat = 66
     var body: some View {
@@ -74,7 +75,7 @@ struct NotView: View {
                     .offset(x: CGFloat(isselect) * (tagwidth))
                 )
                 TabView(selection: $isselect) {
-                    ScrollView{
+                RefreshableScrollView(height: 70, refreshing: $refreshable) {
                         VStack{
                             HStack{
                                 VStack(spacing: 10){
@@ -120,6 +121,19 @@ struct NotView: View {
                                 
                             }
                             .padding(.horizontal, 24)
+                        }
+                        if refreshable{
+                            //加载效果
+                            Rectangle()
+                                .frame(height: 1)
+                                .opacity(0)
+                                .onAppear {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                                        withAnimation {
+                                            refreshable = false
+                                        }
+                                    })
+                                }
                         }
                     }
                     .tag(0)
