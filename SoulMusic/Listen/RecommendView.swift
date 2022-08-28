@@ -12,8 +12,10 @@ struct RecommendView: View {
     @Binding var shareshow : Bool
     @Binding var moreshow : Bool
     @Binding var peopleprofilemoreshow : Bool
+    @Binding var isScroll : Bool
     var body: some View {
         ScrollView(.vertical){
+            ScorllRead
             FunctionView()
             HStack{
                 Text("动态推荐")
@@ -30,11 +32,39 @@ struct RecommendView: View {
             }
         }
     }
+    var ScorllRead : some View{
+        GeometryReader{ proxy in
+            Color.clear
+                .preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
+//
+//            Text("\(proxy.frame(in: .named("scroll")).minY)")
+//                .foregroundColor(.white)
+        }
+        .frame(width: 10, height:0)
+        .onPreferenceChange(ScrollPreferenceKey.self) { value in
+            if value < 0{
+                withAnimation {
+                    isScroll = false
+                }
+            }else if value > 0{
+                withAnimation {
+                    isScroll = true
+                }
+            }
+        }
+    }
+}
+
+struct ScrollPreferenceKey : PreferenceKey{
+    static var defaultValue : CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
 }
 
 struct RecommendView_Previews: PreviewProvider {
     static var previews: some View {
-        RecommendView(shareshow: .constant(false), moreshow: .constant(false), peopleprofilemoreshow: .constant(false))
+        RecommendView(shareshow: .constant(false), moreshow: .constant(false), peopleprofilemoreshow: .constant(false), isScroll: .constant(false))
             .environmentObject(Model())
             .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }

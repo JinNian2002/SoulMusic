@@ -13,8 +13,10 @@ struct FocusView: View {
     @Binding var shareshow: Bool
     @Binding var moreshow : Bool
     @Binding var peopleprofilemoreshow : Bool
+    @Binding var isScroll : Bool
     var body: some View {
         ScrollView(.vertical){
+            ScorllRead
             VStack{
                 HStack{
                     Text("我的关注")
@@ -62,11 +64,34 @@ struct FocusView: View {
             }
         }
     }
+    var ScorllRead : some View{
+        GeometryReader{ proxy in
+            Color.clear
+                .preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
+//
+//            Text("\(proxy.frame(in: .named("scroll")).minY)")
+//                .foregroundColor(.white)
+        }
+        .frame(width: 10, height:0)
+        .onPreferenceChange(ScrollPreferenceKey.self) { value in
+            if value < 0{
+                withAnimation {
+                    isScroll = false
+                }
+            }else if value > 0{
+                withAnimation {
+                    isScroll = true
+                }
+            }
+        }
+    }
 }
+
+
 
 struct FocusView_Previews: PreviewProvider {
     static var previews: some View {
-        FocusView(shareshow: .constant(false), moreshow: .constant(false), peopleprofilemoreshow: .constant(false))
+        FocusView(shareshow: .constant(false), moreshow: .constant(false), peopleprofilemoreshow: .constant(false), isScroll: .constant(false))
             .environmentObject(Model())
             .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }

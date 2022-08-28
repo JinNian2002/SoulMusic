@@ -37,6 +37,7 @@ struct ContentView: View {
     @State var peopleprofilemoreshow = false
     @State var arshow = false
     @State var armakeshow = false
+    @State var isScroll = false
     @EnvironmentObject var tabdatas : Model
     @EnvironmentObject var piccarddatas : Model
     var body: some View {
@@ -44,7 +45,7 @@ struct ContentView: View {
             ZStack{
                 VStack(spacing: 0){
                     VStack{
-                        if DragValue > 0{
+                        if isScroll{
                             //搜索栏
                             SearchView(placeholdertext: $placeholdertext, ontap: $ontap, issearch: $issearch, publishshow: $publishshow)
                         }
@@ -55,16 +56,16 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.05), radius: 46, y: -4)
                     TabView(selection: $isselect){
                         //Recommend
-                        RecommendView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
+                        RecommendView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
                             .tag(0)
                         //Focus
-                        FocusView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
+                        FocusView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
                             .tag(1)
                         //Travel
-                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
                         .tag(2)
                         //Comic
-                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow)
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
                         .tag(3)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
