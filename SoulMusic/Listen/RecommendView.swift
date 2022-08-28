@@ -13,8 +13,9 @@ struct RecommendView: View {
     @Binding var moreshow : Bool
     @Binding var peopleprofilemoreshow : Bool
     @Binding var isScroll : Bool
+    @State var refreshable : Bool = false
     var body: some View {
-        ScrollView(.vertical){
+        RefreshableScrollView(height: 70, refreshing: $refreshable){
             ScorllRead
             FunctionView()
             HStack{
@@ -29,6 +30,19 @@ struct RecommendView: View {
                 ForEach(piccarddatas.PicCarddatas) { item in
                     PicCard(shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
                 }
+            }
+            if refreshable{
+                //加载效果
+                Rectangle()
+                    .frame(height: 1)
+                    .opacity(0)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+                            withAnimation {
+                                refreshable = false
+                            }
+                        })
+                    }
             }
         }
     }

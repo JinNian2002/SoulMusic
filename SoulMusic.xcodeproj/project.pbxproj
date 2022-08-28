@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B58646E24637F9C0E678532 /* Pods_SoulMusic_SoulMusicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */; };
 		3D013E1628B9EB3800B03AFD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D013E1528B9EB3800B03AFD /* ImagePicker.swift */; };
+		3DB02C1528BBD00900EE7E27 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB02C1428BBD00900EE7E27 /* RefreshableScrollView.swift */; };
 		47FC5235C4B29C888FD155FF /* Pods_SoulMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */; };
 		571A15D528B22F900044C99B /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D428B22F900044C99B /* FullScreenView.swift */; };
 		571A15D728B26BD40044C99B /* AriaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571A15D628B26BD40044C99B /* AriaCard.swift */; };
@@ -92,6 +93,7 @@
 		1177743D1F5AF6145ABD0F92 /* Pods-SoulMusic-SoulMusicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoulMusic-SoulMusicUITests/Pods-SoulMusic-SoulMusicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1553B4FA692FAFE4986C324D /* Pods_SoulMusic_SoulMusicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic_SoulMusicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D013E1528B9EB3800B03AFD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		3DB02C1428BBD00900EE7E27 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		44323BF72F979DBAA68FCDBF /* Pods_SoulMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoulMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		571A15D428B22F900044C99B /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		571A15D628B26BD40044C99B /* AriaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaCard.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				577B35EE28AA0DEE007DDC91 /* TabbarView.swift */,
 				3D013E1528B9EB3800B03AFD /* ImagePicker.swift */,
 				5756136828AB9A63002F6F1C /* NavView.swift */,
+				3DB02C1428BBD00900EE7E27 /* RefreshableScrollView.swift */,
 				571A15D428B22F900044C99B /* FullScreenView.swift */,
 				5756136428AB9359002F6F1C /* SongList.swift */,
 				577B360028AA7EF5007DDC91 /* PicCard.swift */,
@@ -695,6 +698,7 @@
 				5756136328AB8241002F6F1C /* MainView.swift in Sources */,
 				571A15DB28B276190044C99B /* PeopleProfileView.swift in Sources */,
 				578D293A28B8FC960041F33B /* ProfileDetailView.swift in Sources */,
+				3DB02C1528BBD00900EE7E27 /* RefreshableScrollView.swift in Sources */,
 				577B361128AA9E4E007DDC91 /* WelcomeView.swift in Sources */,
 				577B360128AA7EF5007DDC91 /* PicCard.swift in Sources */,
 				57F0010028B4C2F1000F62C0 /* Signpage.swift in Sources */,

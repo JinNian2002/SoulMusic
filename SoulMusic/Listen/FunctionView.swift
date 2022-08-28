@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FunctionView: View {
     var body: some View {
-        HStack(alignment: .center){
+        HStack(alignment: .bottom){
             NavigationLink{
                 CameraView()
                     .environmentObject(CameraModel())
@@ -93,6 +93,7 @@ struct FunctionView: View {
                 }
             }
         }
+        .frame(height: UIScreen.main.bounds.width / 2 - 32.5)
         .padding(.horizontal, 24)
         .padding(.vertical, 22)
     }

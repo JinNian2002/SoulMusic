@@ -31,14 +31,27 @@ struct CameraView: View{
                 Spacer()
                 HStack{
                     Spacer()
-                    Button{
-                        Task{
-                            await Camera.ChangeCam()
-                            Camera.isback.toggle()
+                    NavigationLink{
+                        NavView(isshowfront: false, Navtitle: "聆物说明")
+                        ScrollView{
+                            VStack{
+                                VStack(spacing: 24){
+                                    Text("一、“聆物”采用Core ML机器学习技术，并将MobileNetV2作为识别库，识别结果仅供参考。")
+                                    Image("ImageClassification")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .cornerRadius(10)
+                                        .clipped()
+                                    Text("二、“聆物”的基本原理是：\n1.扫描摄像图片进入Core ML得到识别结果的字符串。\n2.将字符串接入MusicKit进行搜索，搜索结果即为“聆物结果”。")
+                                }
+                                .padding(.horizontal, 24)
+                                Spacer()
+                            }
                         }
+                        .navigationBarHidden(true)
                     }label: {
                         HStack{
-                            Image(systemName: "arrow.triangle.2.circlepath.camera")
+                            Image("info_dm")
                                 .foregroundColor(.white)
                         }
                         .circleIcon(width: 50, height: 50)
