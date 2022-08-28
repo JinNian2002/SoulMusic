@@ -13,6 +13,7 @@ import UIKit
 struct CameraView: View{
     let model = MobileNetV2()
     @State var classificationLabel: String = ""
+    @State var musiclistresult: Bool = false
     @StateObject var Camera : CameraModel = CameraModel()
     var body: some View{
         ZStack{
@@ -26,12 +27,6 @@ struct CameraView: View{
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width * 2 / 3)
-                VStack{
-                    Text(classificationLabel)
-                        .padding()
-                        .font(.largeTitle)
-                }
-                .background(.white)
                 Spacer()
                 HStack{
                     Spacer()
@@ -40,6 +35,9 @@ struct CameraView: View{
                     }
                     .circleIcon(width: 50, height: 50)
                     .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
+                    .onTapGesture {
+                        
+                    }
                     Spacer()
                     HStack{
                         Image("camera")
@@ -48,14 +46,14 @@ struct CameraView: View{
                     .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
                     .onTapGesture {
                         Camera.takePic()
-                        classifyImage()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                            classifyImage()
+                        })
+                        musiclistresult = true
                     }
                     Spacer()
                     Button{
-                        if !Camera.isSaved{
-                            Camera.SavePic()
-                        }
-                        
+                        Camera.OpenFlash()
                     }label: {
                         HStack{
                             Image("flash")
@@ -72,9 +70,17 @@ struct CameraView: View{
         .onAppear{
             Camera.Check()
         }
+        .fullScreenCover(isPresented: $musiclistresult) {
+            VStack{
+                FullScreenView(publishshow: $musiclistresult, fullScreentitle: "聆物歌单", screenbutton: "        ")
+                Text(classificationLabel)
+                Spacer()
+            }
+            
+        }
     }
     func classifyImage() {
-        guard let image = UIImage(named: "store"),
+        guard let image = UIImage(data: Camera.picData),
               let resizedImage = image.resizeImageTo(size:CGSize(width: 224, height: 224)),
               let buffer = resizedImage.convertToBuffer() else {return}
         
@@ -86,56 +92,152 @@ struct CameraView: View{
     }
 }
 
-class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
-    
-    
+class CameraModel:NSObject,ObservableObject,AVCapturePhotoCaptureDelegate{
     @Published var session = AVCaptureSession()
-    @Published var output = AVCapturePhotoOutput()
+    
     @Published var preview : AVCaptureVideoPreviewLayer!
+    
+    @Published var output = AVCapturePhotoOutput()
+    
     @Published var isTaken : Bool = false
+    
     @Published var isSaved : Bool = false
-    @Published var picData : Data = Data()
+    
+    @Published var picData : Data  = Data()
+    
+    @Published var setting:AVCapturePhotoSettings?
+    
+    @Published var device:AVCaptureDevice!//获取设备:如摄像头
+    
+    @Published var input:AVCaptureDeviceInput!//输入流
+    
+    @Published var isflash : Bool = false
+    
+    @Published var isback : Bool = true
+    
+    @Published var iswaiting : Bool = false
+    
     func Check(){
         switch AVCaptureDevice.authorizationStatus(for: .video){
-        case .authorized:
-            self.SetUp()
-            return
-            
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { (Status) in
-                if Status{
-                    self.SetUp()
+            case .authorized:
+                // 启动
+                self.SetUp()
+                return
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video) { (Status) in
+                    if Status{
+                        // 启动
+                        self.SetUp()
+                    }
                 }
-            }
-            return
-        case .denied:
-            return
-        default:
-            return
+                return
+            case .denied:
+                return
+            default:
+                return
         }
-        
     }
+    
+    func ShutDown(){
+        self.session.stopRunning()
+        self.session.beginConfiguration()
+        self.session.removeInput(self.input)
+        self.session.removeOutput(self.output)
+        self.session.commitConfiguration()
+    }
+    
     func SetUp(){
         do{
             self.session.beginConfiguration()
-            let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)!
-            let input = try AVCaptureDeviceInput(device: device)
-            if self.session.canAddInput(input){
-                self.session.addInput(input)
-            }
-            if self.session.canAddOutput(self.output){
+            self.device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+               //照片输出设置
+            self.setting = AVCapturePhotoSettings.init(format: [AVVideoCodecKey:AVVideoCodecType.jpeg])
+          //用输入设备初始化输入
+            self.input = try AVCaptureDeviceInput(device: self.device!)
+            if(self.session.canAddInput(self.input)){
+                self.session.addInput(self.input)
+          }
+            if(self.session.canAddOutput(self.output)){
                 self.session.addOutput(self.output)
-            }
+           }
             self.session.commitConfiguration()
+            self.session.startRunning()
         }catch{
             print(error)
         }
+    }
+    
+    func Restart(){
+        DispatchQueue.global(qos: .background).async {
+            self.session.startRunning()
+            DispatchQueue.main.async {
+                withAnimation {
+                    self.isTaken = false
+                    self.isSaved = false
+                }
+            }
+        }
+    }
+    
+    func ChangeCam()async{
+        do{
+            if self.device.position == .back{
+                let device = AVCaptureDevice.default(.builtInTrueDepthCamera, for: .video, position: .front)
+                self.session.beginConfiguration()
+                self.session.removeInput(self.input)
+                let newinput = try AVCaptureDeviceInput(device: device!)
+                if(self.session.canAddInput(newinput)){
+                    self.session.addInput(newinput)
+                }
+                self.session.commitConfiguration()
+                self.input = newinput
+                self.device = device!
+                self.isback = false
+            }else{
+                let device = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back)
+                self.session.beginConfiguration()
+                self.session.removeInput(self.input)
+                let newinput = try AVCaptureDeviceInput(device: device!)
+                if(self.session.canAddInput(newinput)){
+                    self.session.addInput(newinput)
+                }
+                self.session.commitConfiguration()
+                self.input = newinput
+                self.device = device!
+                self.isback = true
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
+    func ChangeWH(){
         
     }
     
+    func OpenFlash(){
+        self.isflash = !self.isflash//改变闪光灯
+        try? self.device.lockForConfiguration()
+        if(self.isflash){//开启
+            self.device.torchMode = .on
+           }else{//关闭
+               if self.device.hasTorch {
+                   self.device.torchMode = .off//关闭闪光灯
+               }
+           
+           }
+        self.device.unlockForConfiguration()
+    }
+   
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+           let imagedata  =  AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer!, previewPhotoSampleBuffer: previewPhotoSampleBuffer)
+           self.picData = imagedata!
+    }
+    
     func takePic(){
+        self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
         DispatchQueue.global(qos: .background).async {
-            self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
             self.session.stopRunning()
             DispatchQueue.main.async {
                 withAnimation {
@@ -144,28 +246,19 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             }
         }
     }
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        guard error != nil else {return}
-        print("take photo")
-        guard let imagedata = photo.fileDataRepresentation() else {return}
-        self.picData = imagedata
-    }
     
     func SavePic(){
-        guard self.picData.count != 0 else {return}
         let image = UIImage(data: self.picData)!
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        self.isSaved = true
-        print("saved Success")
+       self.isSaved = true
+       print("Saved Successfully...")
     }
 }
 
-
-
 struct CameraPreview : UIViewRepresentable{
-    @ObservedObject var camera: CameraModel
+    @ObservedObject var camera : CameraModel
     
-    func makeUIView(context: Context) -> some UIView {
+    func makeUIView(context: Context) ->  UIView {
         let UIView = UIView(frame: UIScreen.main.bounds)
         camera.preview = AVCaptureVideoPreviewLayer(session: camera.session)
         camera.preview.frame = UIView.frame
@@ -175,7 +268,7 @@ struct CameraPreview : UIViewRepresentable{
         return UIView
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
+    func updateUIView(_ uiView: UIView, context: Context) {
         return
     }
 }
