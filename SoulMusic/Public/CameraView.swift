@@ -11,6 +11,7 @@ import CoreML
 import UIKit
 
 struct CameraView: View{
+    @Environment(\.colorScheme) var currentMode
     let model = MobileNetV2()
     @State var classificationLabel: String = ""
     @State var musiclistresult: Bool = false
@@ -69,14 +70,29 @@ struct CameraView: View{
         }
         .onAppear{
             Camera.Check()
+            Camera.Restart()
         }
         .fullScreenCover(isPresented: $musiclistresult) {
             VStack{
-                FullScreenView(publishshow: $musiclistresult, fullScreentitle: "聆物歌单", screenbutton: "        ")
+                HStack{
+                    Image(currentMode == .dark ? "x_24_dm" : "x_24")
+                        .padding(12)
+                        .onTapGesture {
+                            musiclistresult = false
+                            Camera.Check()
+                            Camera.Restart()
+                        }
+                    Spacer()
+                    Text("聆物歌单")
+                        .font(.system(size: 17, weight: .medium))
+                    Spacer()
+                    Image(currentMode == .dark ? "x_24_dm" : "x_24")
+                        .padding(12)
+                        .opacity(0)
+                }
                 Text(classificationLabel)
                 Spacer()
             }
-            
         }
     }
     func classifyImage() {
