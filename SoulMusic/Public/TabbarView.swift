@@ -55,7 +55,8 @@ struct TabbarView: View {
                     arshow = true
                 }
                 .fullScreenCover(isPresented: $arshow) {
-                    ARcommunityView(arshow: $arshow)
+//                    ARcommunityView(arshow: $arshow)
+                    RealityComposerView(arshow: $arshow)
                 }
                 HStack{
                     Spacer()

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+import UIKit
  
 struct RefreshableScrollView<Content: View>: View {
     @State private var previousScrollOffset: CGFloat = 0
@@ -107,11 +108,12 @@ struct RefreshableScrollView<Content: View>: View {
                     }.frame(height: height).fixedSize()
                         .offset(y: -height + (self.loading && self.frozen ? height : 0.0))
                 } else {
-                    Image(systemName: "arrow.down") // If not loading, show the arrow
+                    Image("icon_listentoworld_24_sel") // If not loading, show the arrow
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: height * 0.25, height: height * 0.25).fixedSize()
-                        .padding(height * 0.375)
+                        .frame(width: height * 0.4, height: height * 0.4).fixedSize()
+                        .padding(height * 0.5)
+                        .opacity(0.5)
                         .rotationEffect(rotation)
                         .offset(y: -height + (loading && frozen ? +height : 0.0))
                 }
@@ -168,5 +170,6 @@ struct ActivityRep: UIViewRepresentable {
         uiView.startAnimating()
     }
 }
+
 
 
