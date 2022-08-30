@@ -12,6 +12,7 @@ struct ProfileView: View {
     @State var profilemoreshow = false
     @State var arshow = false
     @EnvironmentObject var MyClientdata : ClientData
+    @EnvironmentObject var Musicdata : Model
     var body: some View {
         NavigationView{
             ZStack{
@@ -117,13 +118,16 @@ struct ProfileView: View {
                     .padding(.horizontal, 24)
                     ScrollView(.vertical, showsIndicators: false){
                         VStack{
-                            ForEach(0..<10) { item in
-                                SongList(profilemoreshow: $profilemoreshow)
+                            ForEach(Musicdata.Mysongdatas) { item in
+                                SongList(profilemoreshow: $profilemoreshow, songname: item.songname, singername: MyClientdata.MyClient.username, image: item.image)
                                 Divider()
                             }
                         }
                         .padding(.leading, 24)
                         .padding(.trailing, 12)
+                        Rectangle()
+                            .frame(height: 70)
+                            .opacity(0)
                     }
                     TabbarView(arshow: $arshow)
                 }

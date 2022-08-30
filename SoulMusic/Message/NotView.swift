@@ -11,7 +11,6 @@ struct NotView: View {
     @Environment(\.colorScheme) var currentMode
     @State var placeholdertext: String = ""
     @State var ontap : Bool = false
-    @State var issearch : Bool = false
     @State var isselect : Int = 0
     @State var arshow = false
     @State var refreshable = false
@@ -20,17 +19,20 @@ struct NotView: View {
     var body: some View {
         NavigationView{
             VStack(spacing: 0){
-                VStack{
+                HStack{
                     HStack{
                         Image("search")
                         TextField("搜索消息...", text: $placeholdertext)
                             .font(.system(size: 13.5, weight: .light))
-                            .onTapGesture {
-                                withAnimation (.easeIn(duration: 0.1)){
-                                    issearch = true
-                                }
+                        if placeholdertext != "" {
+                            Button{
+                                placeholdertext = ""
+                            }label: {
+                                Image(systemName: "xmark.circle.fill")
                             }
+                            .foregroundColor(.black.opacity(0.4))
                         }
+                    }
                     .padding(.vertical ,4)
                     .padding(.horizontal, 13)
                     .background(Color("Input"), in: RoundedRectangle(cornerRadius: 50))
@@ -122,6 +124,9 @@ struct NotView: View {
                             }
                             .padding(.horizontal, 24)
                         }
+                    Rectangle()
+                        .frame(height: 70)
+                        .opacity(0)
                         if refreshable{
                             //加载效果
                             Rectangle()

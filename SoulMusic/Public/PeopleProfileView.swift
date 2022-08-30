@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PeopleProfileView: View {
     @Environment(\.colorScheme) var currentMode
+    @EnvironmentObject var Musicdata : Model
     @Binding var peopleprofilemoreshow : Bool
     var body: some View {
         ZStack{
@@ -62,8 +63,8 @@ struct PeopleProfileView: View {
                 .padding(.horizontal, 24)
                 ScrollView(.vertical, showsIndicators: false){
                     VStack{
-                        ForEach(0..<10) { item in
-                            SongList(profilemoreshow: $peopleprofilemoreshow)
+                        ForEach(Musicdata.Mysongdatas) { item in
+                            SongList(profilemoreshow: $peopleprofilemoreshow, songname: item.songname, singername: "痴若", image: item.image)
                             Divider()
                         }
                     }

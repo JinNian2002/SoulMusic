@@ -31,6 +31,10 @@ struct RecommendView: View {
                     PicCard(shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, heart: item.heart, username: item.username, time: item.time, image: item.image, text: item.text, pic: item.pic, sharenum: item.sharenum, messagenum: item.messagenum, heartnum: item.heartnum, item: item)
                 }
             }
+            //占位，将页面顶出播放器区域
+            Rectangle()
+                .frame(height: 70)
+                .opacity(0)
             if refreshable{
                 //加载效果
                 Rectangle()

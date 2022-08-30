@@ -67,6 +67,15 @@ struct ContentView: View {
                         //Comic
                         TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
                         .tag(3)
+                        //Fun
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
+                        .tag(4)
+                        //Movie
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
+                        .tag(5)
+                        //Game
+                        TravelView(piccarddatas: _piccarddatas, shareshow: $shareshow, moreshow: $moreshow, peopleprofilemoreshow: $peopleprofilemoreshow, isScroll: $isScroll)
+                        .tag(6)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     .gesture(DragGesture()

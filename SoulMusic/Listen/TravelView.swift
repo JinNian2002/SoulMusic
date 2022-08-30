@@ -38,6 +38,9 @@ struct TravelView: View {
                     }
                 }
             }
+            Rectangle()
+                .frame(height: 70)
+                .opacity(0)
             if refreshable{
                 //加载效果
                 Rectangle()

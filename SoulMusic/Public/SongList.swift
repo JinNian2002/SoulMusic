@@ -10,20 +10,23 @@ import SwiftUI
 struct SongList: View {
     @Environment(\.colorScheme) var currentMode
     @Binding var profilemoreshow : Bool
+    var songname : String
+    var singername : String
+    var image : String
     var body: some View {
         HStack{
-            HStack{
-                Image("store")
+            HStack(spacing: 10){
+                Image(image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 40, height: 40)
                     .cornerRadius(4)
                 VStack(alignment: .leading, spacing: 3){
-                    Text("Long Time")
+                    Text(songname)
                         .font(.system(size: 14))
                         .foregroundColor(Color("OnSurface"))
-                    Text("瑾年")
-                        .font(.system(size: 12, weight: .thin))
+                    Text(singername)
+                        .font(.system(size: 12))
                         .foregroundColor(Color("FontSecondary"))
                 }
             }
@@ -37,12 +40,5 @@ struct SongList: View {
                     
                 }
         }
-    }
-}
-
-struct SongList_Previews: PreviewProvider {
-    static var previews: some View {
-        SongList(profilemoreshow: .constant(false))
-            .environmentObject(ClientData(FromOutMyClient: initMyClientData()))
     }
 }

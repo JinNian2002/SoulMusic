@@ -11,6 +11,7 @@ struct PicCard: View {
     @Binding var shareshow : Bool
     @Binding var moreshow : Bool
     @Binding var peopleprofilemoreshow : Bool
+    @State var arshow = false
     var heart = false
     var username = ""
     var time = ""
@@ -40,6 +41,45 @@ struct PicCard: View {
                 Text(text)
                     .font(.system(size: 16))
                     .foregroundColor(Color("OnSurface"))
+            }else if item.type == "ar"{
+                Text(text)
+                    .font(.system(size: 16))
+                    .foregroundColor(Color("OnSurface"))
+                Image(pic)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: UIScreen.main.bounds.height / 4)
+                    .clipped()
+                    .cornerRadius(6)
+                    .overlay(
+                        VStack(alignment: .leading){
+                            Spacer()
+                            HStack{
+                                HStack(spacing: 3){
+                                    Image("ar_dm")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 16, height: 16)
+                                    Text("AR社区")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.vertical, 4)
+                                .padding(.horizontal, 6)
+                                .background(.white.opacity(0.7), in: RoundedRectangle(cornerRadius: 50))
+                                Spacer()
+                            }
+                            
+                        }
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 6)
+                    )
+                    .onTapGesture {
+                        arshow = true
+                    }
+                    .fullScreenCover(isPresented: $arshow) {
+                        RealityComposerView(arshow: $arshow)
+                    }
             }
                 
             CardBar(heart: heart, shareshow: $shareshow, sharenum: sharenum, messagenum: messagenum, heartnum: heartnum)

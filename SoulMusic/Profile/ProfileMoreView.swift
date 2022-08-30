@@ -81,17 +81,17 @@ struct ProfileMoreView: View {
                             Text("动态")
                                 .font(.system(size: 14))
                         }
-                        VStack(spacing: 6){
-                            HStack{
-                                Image("trash_20_dm")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 24)
-                            }
-                            .circleIcon(width: 40, height: 40)
-                            Text("删除")
-                                .font(.system(size: 14))
-                        }
+//                        VStack(spacing: 6){
+//                            HStack{
+//                                Image("trash_20_dm")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 24)
+//                            }
+//                            .circleIcon(width: 40, height: 40)
+//                            Text("删除")
+//                                .font(.system(size: 14))
+//                        }
                     }
                 }
                 

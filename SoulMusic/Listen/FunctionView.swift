@@ -33,33 +33,43 @@ struct FunctionView: View {
             Spacer()
             VStack{
                 HStack{
-                    VStack{
-                        Text("听天气")
-                            .font(.system(size: 18, weight: .medium))
-                            
+                    NavigationLink{
+                        WeatherView()
+                            .navigationBarHidden(true)
+                    }label: {
+                        VStack{
+                            Text("听天气")
+                                .font(.system(size: 18, weight: .medium))
+                                
+                        }
+                        .frame(width: UIScreen.main.bounds.width / 4 - 20.5, height: UIScreen.main.bounds.width / 4 - 20.5, alignment: .center)
+                        .foregroundColor(.white)
+                        .background(Image("listentoweather").resizable().aspectRatio(contentMode: .fill))
+                        .cornerRadius(6)
+                        .clipped()
+                        .padding(2)
+                        .background(Color("Primary"))
+                        .cornerRadius(8)
                     }
-                    .frame(width: UIScreen.main.bounds.width / 4 - 20.5, height: UIScreen.main.bounds.width / 4 - 20.5, alignment: .center)
-                    .foregroundColor(.white)
-                    .background(Image("listentoweather").resizable().aspectRatio(contentMode: .fill))
-                    .cornerRadius(6)
-                    .clipped()
-                    .padding(2)
-                    .background(Color("Primary"))
-                    .cornerRadius(8)
                     Spacer()
-                    VStack{
-                        Text("听地点")
-                            .font(.system(size: 18, weight: .medium))
-                            
+                    NavigationLink{
+                        PlaceView()
+                            .navigationBarHidden(true)
+                    }label: {
+                        VStack{
+                            Text("听地点")
+                                .font(.system(size: 18, weight: .medium))
+                                
+                        }
+                        .frame(width: UIScreen.main.bounds.width / 4 - 20.5, height: UIScreen.main.bounds.width / 4 - 20.5, alignment: .center)
+                        .foregroundColor(.white)
+                        .background(Image("listentoplace").resizable().aspectRatio(contentMode: .fill))
+                        .cornerRadius(6)
+                        .clipped()
+                        .padding(2)
+                        .background(Color("Primary"))
+                        .cornerRadius(8)
                     }
-                    .frame(width: UIScreen.main.bounds.width / 4 - 20.5, height: UIScreen.main.bounds.width / 4 - 20.5, alignment: .center)
-                    .foregroundColor(.white)
-                    .background(Image("listentoplace").resizable().aspectRatio(contentMode: .fill))
-                    .cornerRadius(6)
-                    .clipped()
-                    .padding(2)
-                    .background(Color("Primary"))
-                    .cornerRadius(8)
                 }
                 Spacer()
                 HStack{

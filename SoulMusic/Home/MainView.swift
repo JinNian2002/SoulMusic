@@ -18,11 +18,7 @@ struct MainView: View {
             case .listen:
                 ContentView()
             case .musiclibrary:
-                VStack{
-                    Text("1")
-                    Spacer()
-                    TabbarView(arshow: $arshow)
-                }
+                MusiclibraryView()
             case .message:
                 NotView()
             case .profile:

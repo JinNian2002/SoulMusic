@@ -76,8 +76,13 @@ struct CardBar: View {
             Spacer()
             HStack(spacing: 6){
                 Image(heart ? "heart_20_sel": currentMode == .dark ? "heart_20_nsel_dm" :"heart_20_nsel")
-                Text("\(heartnum)")
-                    .font(.system(size: 12))
+                if heart{
+                    Text("\(heartnum + 1)")
+                        .font(.system(size: 12))
+                }else{
+                    Text("\(heartnum)")
+                        .font(.system(size: 12))
+                }
             }
             .onTapGesture {
                     heart.toggle()
