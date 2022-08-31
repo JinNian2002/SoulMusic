@@ -14,152 +14,162 @@ struct TabbarView: View {
     @Binding var arshow : Bool
     @State var ispause = false
     @State var isplayershow = false
+    @State var progress : CGFloat = 0.25
     var body: some View {
         ZStack{
-            HStack{
+            VStack(spacing: 0){
                 HStack{
-                    Image("store")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(4)
-                    Text("Supercut")
-                }
-                Spacer()
-                HStack(spacing: 27){
-                    Button{
-                        
-                    }label: {
-                        Image(currentMode == .dark ? "skip_back_dm" : "skip_back")
-                    }
-                    
-                    Button{
-                        withAnimation {
-                            ispause.toggle()
-                        }
-                    }label: {
-                        Image(ispause ? (currentMode == .dark ? "pause_dm" : "pause") : (currentMode == .dark ? "play_dm" : "play"))
-                    }
-                    Button{
-                        
-                    }label: {
-                        Image(currentMode == .dark ? "skip_forward_dm" : "skip_forward")
-                    }
-                    
+                    Rectangle()
+                        .frame(width: UIScreen.main.bounds.width * progress, height: 2)
+                        .foregroundColor(Color("Primary"))
+                    Spacer()
                 }
                 
-            }
-            .padding(.horizontal, 24)
-            .padding(.vertical, 10)
-            .background(.thinMaterial)
-            .offset(y: -60)
-            .onTapGesture {
-                isplayershow = true
-            }
-            .sheet(isPresented: $isplayershow) {
-                VStack{
-                    VStack(spacing: 24){
-                        RoundedRectangle(cornerRadius: 50)
-                            .frame(width: 50, height: 5)
-                            .foregroundColor(Color("FontSecondary").opacity(0.75))
-                        VStack{
-                            Image("store")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
-                                .cornerRadius(6)
-                            Spacer()
-                            VStack(spacing: 9){
-                                Text("Supercut").font(.system(size: 18, weight: .medium))
-                                    .foregroundColor(.black)
-                                Text("Lorde")
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color("FontSecondary"))
+                HStack{
+                    HStack{
+                        Image("store")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(4)
+                        Text("Supercut")
+                    }
+                    Spacer()
+                    HStack(spacing: 27){
+                        Button{
+                            
+                        }label: {
+                            Image(currentMode == .dark ? "skip_back_dm" : "skip_back")
+                        }
+                        
+                        Button{
+                            withAnimation {
+                                ispause.toggle()
                             }
-                            Spacer()
-                            HStack(spacing: 34){
-                                Button{
-                                    
-                                }label: {
-                                    Image("skip_back")
-                                }
-                                Button{
-                                    withAnimation {
-                                        ispause.toggle()
-                                    }
-                                }label: {
-                                    HStack{
-                                        if ispause{
-                                            Image("pause_dm")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 30, height: 30)
-                                        }else{
-                                            Image("play_dm")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 30, height: 30)
-                                                .offset(x: 3)
-                                        }
-                                        
-                                    }
-                                    .circleIcon(width: 60, height: 60)
-                                    .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
-                                }
-                                Button{
-                                    
-                                }label: {
-                                    Image("skip_forward")
-                                }
-                            }
-                            Spacer()
+                        }label: {
+                            Image(ispause ? (currentMode == .dark ? "pause_dm" : "pause") : (currentMode == .dark ? "play_dm" : "play"))
+                        }
+                        Button{
+                            
+                        }label: {
+                            Image(currentMode == .dark ? "skip_forward_dm" : "skip_forward")
+                        }
+                        
+                    }
+                    
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 10)
+                .background(.thinMaterial)
+                .onTapGesture {
+                    isplayershow = true
+                }
+                .sheet(isPresented: $isplayershow) {
+                    VStack{
+                        VStack(spacing: 24){
+                            RoundedRectangle(cornerRadius: 50)
+                                .frame(width: 50, height: 5)
+                                .foregroundColor(Color("FontSecondary").opacity(0.75))
                             VStack{
-                                RoundedRectangle(cornerRadius: 50)
-                                    .frame(height: 2)
-                                    .foregroundColor(Color("FontSecondary").opacity(0.5))
-                                    .overlay(
-                                        HStack{
-                                            RoundedRectangle(cornerRadius: 50)
-                                                .frame(width: 50, height: 2)//进度条
-                                                .foregroundColor(Color("Primary"))
-                                                .overlay(
-                                                    HStack{
-                                                        Spacer()
-                                                        Circle()
-                                                            .frame(width: 6, height: 6)
-                                                            .foregroundColor(Color("Primary"))
-                                                    }
-                                                )
-                                            Spacer()
-                                        }
-                                    )
-                                HStack{
-                                    Text("1:15")
-                                    Spacer()
-                                    Text("-2:15")
+                                Image("store")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.width * 0.8)
+                                    .cornerRadius(6)
+                                Spacer()
+                                VStack(spacing: 9){
+                                    Text("Supercut").font(.system(size: 18, weight: .medium))
+                                        .foregroundColor(.black)
+                                    Text("Lorde")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(Color("FontSecondary"))
                                 }
-                                .foregroundColor(Color("FontSecondary").opacity(0.5))
-                                .font(.system(size: 12))
-                            }
-                            Spacer()
-                            HStack{
-                                Image("player_list")
                                 Spacer()
-                                Image("player_airplay")
+                                HStack(spacing: 34){
+                                    Button{
+                                        
+                                    }label: {
+                                        Image("skip_back")
+                                    }
+                                    Button{
+                                        withAnimation {
+                                            ispause.toggle()
+                                        }
+                                    }label: {
+                                        HStack{
+                                            if ispause{
+                                                Image("pause_dm")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 30, height: 30)
+                                            }else{
+                                                Image("play_dm")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 30, height: 30)
+                                                    .offset(x: 3)
+                                            }
+                                            
+                                        }
+                                        .circleIcon(width: 60, height: 60)
+                                        .shadow(color: Color("Primary").opacity(0.5), radius: 10, x: 0, y: 0)
+                                    }
+                                    Button{
+                                        
+                                    }label: {
+                                        Image("skip_forward")
+                                    }
+                                }
                                 Spacer()
-                                Image("player_adjust")
+                                VStack{
+                                    RoundedRectangle(cornerRadius: 50)
+                                        .frame(height: 2)
+                                        .foregroundColor(Color("FontSecondary").opacity(0.5))
+                                        .overlay(
+                                            HStack{
+                                                RoundedRectangle(cornerRadius: 50)
+                                                    .frame(width: UIScreen.main.bounds.width * progress, height: 2)//进度条
+                                                    .foregroundColor(Color("Primary"))
+                                                    .overlay(
+                                                        HStack{
+                                                            Spacer()
+                                                            Circle()
+                                                                .frame(width: 6, height: 6)
+                                                                .foregroundColor(Color("Primary"))
+                                                        }
+                                                    )
+                                                Spacer()
+                                            }
+                                        )
+                                    HStack{
+                                        Text("1:15")
+                                        Spacer()
+                                        Text("-2:15")
+                                    }
+                                    .foregroundColor(Color("FontSecondary").opacity(0.5))
+                                    .font(.system(size: 12))
+                                }
                                 Spacer()
-                                Image("player_lyric")
-                                Spacer()
-                                Image("player_more")
+                                HStack{
+                                    Image("player_list")
+                                    Spacer()
+                                    Image("player_airplay")
+                                    Spacer()
+                                    Image("player_adjust")
+                                    Spacer()
+                                    Image("player_lyric")
+                                    Spacer()
+                                    Image("player_more")
+                                }
                             }
                         }
+                        .padding(24)
+                        .background(.ultraThinMaterial)
                     }
-                    .padding(24)
-                    .background(.ultraThinMaterial)
+                    .background(Image("playerbackground").resizable().aspectRatio(contentMode: .fill))
                 }
-                .background(Image("playerbackground").resizable().aspectRatio(contentMode: .fill))
             }
+            .offset(y: -62)
             VStack{
                 HStack{
                     HStack{
